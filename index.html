@@ -239,6 +239,373 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/12/java-01-Array/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="HongbinW">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/11/12/java-01-Array/" itemprop="url">java_01_Array</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-12T19:44:01+08:00">
+                2018-11-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h1><h2 id="一维数组"><a href="#一维数组" class="headerlink" title="一维数组"></a>一维数组</h2><p>1.数组一旦初始化，长度不可变<br>2.对于基本数据类型的变量创建的数组：<br>    byte short int long float double char boolean<br>1&gt;对于byte short int long而言，创建数组后，默认值为0；<br>2&gt;对于float double而言，默认值为0.0<br>3&gt;对于char而言，默认为空格<br>4&gt;对于boolean而言，默认为false<br>5&gt;对于引用类型的变量构成的数组而言，默认初始化值为null，以string为例<br>    <strong>*</strong>除了基本数据类型，其他都是引用类型<strong><strong>**</strong></strong></p>
+<h2 id="二维数组"><a href="#二维数组" class="headerlink" title="二维数组"></a>二维数组</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">int[][] j = new int[3][];   //如下例，对于二维数组先生成一个三个元素的数				    </span><br><span class="line">						    //组，此时这三个元素为引用类型，因为未初始化				    </span><br><span class="line">						    //所以此时这三个元素为Null</span><br><span class="line">//j[2][0] = 12;             //报错！同理，数组为引用类型，因为未初始化</span><br><span class="line">				            //所以j[2][0] = null，所以相当于一个空指针</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">int[][] k = new int[3][];</span><br><span class="line">k[0] = new int[2];</span><br><span class="line">k[1] = new int[3];</span><br><span class="line">k[2] = new int[]&#123;1,2,3&#125;;</span><br><span class="line">for(int m = 0; m &lt; k.length ; m++)&#123;</span><br><span class="line">    System.out.println(k[m]);&#125;</span><br><span class="line">    System.out.println();</span><br><span class="line">for(int m = 0; m &lt; k.length ; m++)&#123;</span><br><span class="line">    for(int n = 0; n &lt; k[m].length ; n++)&#123;</span><br><span class="line">        System.out.print(k[m][n]+&quot; &quot;);</span><br><span class="line">	&#125;</span><br><span class="line">	System.out.println();</span><br><span class="line">&#125;</span><br><span class="line">System.out.println(k[2][0]);</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">//输出结果如下</span><br><span class="line">[I@4554617c</span><br><span class="line">[I@74a14482</span><br><span class="line">[I@1540e19d</span><br><span class="line"></span><br><span class="line">0 0</span><br><span class="line">0 0 0</span><br><span class="line">1 2 3</span><br><span class="line"></span><br><span class="line">1</span><br></pre></td></tr></table></figure>
+<p>但是如若初始化第二维后，就按照第一维的规则来</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/19/tips/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="HongbinW">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/10/19/tips/" itemprop="url">tips</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-19T13:16:34+08:00">
+                2018-10-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>pip 换源<br>pip换源内容。关掉之前没下载好的，重新开一个终端，再下载，就能用清华源了。<br>[global]<br>index-url =  = <a href="https://pypi.tuna.tsinghua.edu.cn/simple" target="_blank" rel="noopener">https://pypi.tuna.tsinghua.edu.cn/simple</a></p>
+<p><img src="./pip换源.png" alt=""></p>
+<p>win安装pytorch<br><a href="https://blog.csdn.net/xiangxianghehe/article/details/73500031" target="_blank" rel="noopener">https://blog.csdn.net/xiangxianghehe/article/details/73500031</a></p>
+<p>校园邮箱拦截队列<br><a href="http://tieba.baidu.com/p/3743763837" target="_blank" rel="noopener">http://tieba.baidu.com/p/3743763837</a></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/17/python-库/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="HongbinW">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/10/17/python-库/" itemprop="url">python 库</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-17T21:23:28+08:00">
+                2018-10-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>数组：Numpy<br>模块内相关工具<a href="https://www.jianshu.com/p/83c8ef18a1e8" target="_blank" rel="noopener">https://www.jianshu.com/p/83c8ef18a1e8</a></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/15/大话数据结构-02算法/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -498,13 +865,13 @@
       
         
           
-            <p>���ذ�װ<br><a href="https://blog.csdn.net/weixin_39879178/article/details/80319392" target="_blank" rel="noopener">https://blog.csdn.net/weixin_39879178/article/details/80319392</a></p>
-<p>Hexo�����Լ�Hext�������ã��Ƚ����ģ�<br><a href="https://blog.csdn.net/qq_37210523/article/details/80909983" target="_blank" rel="noopener">https://blog.csdn.net/qq_37210523/article/details/80909983</a></p>
-<p>һЩ�Ű�ȵ�˵��<br><a href="https://www.jianshu.com/p/56d99a3049a5" target="_blank" rel="noopener">https://www.jianshu.com/p/56d99a3049a5</a></p>
-<p>makedown�﷨<br><a href="https://www.jianshu.com/p/191d1e21f7ed" target="_blank" rel="noopener">https://www.jianshu.com/p/191d1e21f7ed</a><br><a href="https://www.jianshu.com/p/b03a8d7b1719" target="_blank" rel="noopener">https://www.jianshu.com/p/b03a8d7b1719</a></p>
-<p>���ֲ����ɲο�<br><a href="https://www.cnblogs.com/liuxianan/p/build-blog-website-by-hexo-github.html#д����" target="_blank" rel="noopener">https://www.cnblogs.com/liuxianan/p/build-blog-website-by-hexo-github.html#д����</a></p>
-<p>��������<br><a href="https://blog.csdn.net/qq_26975307/article/details/62447489" target="_blank" rel="noopener">https://blog.csdn.net/qq_26975307/article/details/62447489</a></p>
-<p>�����Ժ����ʹ��Hexo����д����<br><a href="https://www.cnblogs.com/study-everyday/p/8902136.html" target="_blank" rel="noopener">https://www.cnblogs.com/study-everyday/p/8902136.html</a></p>
+            <p>下载安装<br><a href="https://blog.csdn.net/weixin_39879178/article/details/80319392" target="_blank" rel="noopener">https://blog.csdn.net/weixin_39879178/article/details/80319392</a></p>
+<p>Hexo配置以及Hext主题配置（比较良心）<br><a href="https://blog.csdn.net/qq_37210523/article/details/80909983" target="_blank" rel="noopener">https://blog.csdn.net/qq_37210523/article/details/80909983</a></p>
+<p>一些排版等的说明<br><a href="https://www.jianshu.com/p/56d99a3049a5" target="_blank" rel="noopener">https://www.jianshu.com/p/56d99a3049a5</a></p>
+<p>makedown语法<br><a href="https://www.jianshu.com/p/191d1e21f7ed" target="_blank" rel="noopener">https://www.jianshu.com/p/191d1e21f7ed</a><br><a href="https://www.jianshu.com/p/b03a8d7b1719" target="_blank" rel="noopener">https://www.jianshu.com/p/b03a8d7b1719</a></p>
+<p>部分操作可参考<br><a href="https://www.cnblogs.com/liuxianan/p/build-blog-website-by-hexo-github.html#写博客" target="_blank" rel="noopener">https://www.cnblogs.com/liuxianan/p/build-blog-website-by-hexo-github.html#写博客</a></p>
+<p>常用命令<br><a href="https://blog.csdn.net/qq_26975307/article/details/62447489" target="_blank" rel="noopener">https://blog.csdn.net/qq_26975307/article/details/62447489</a></p>
+<p>换电脑后，如何使用Hexo继续写博客<br><a href="https://www.cnblogs.com/study-everyday/p/8902136.html" target="_blank" rel="noopener">https://www.cnblogs.com/study-everyday/p/8902136.html</a></p>
 
           
         
@@ -714,7 +1081,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
