@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="数组一维数组1.数组一旦初始化，长度不可变2.对于基本数据类型的变量创建的数组：    byte short int long float double char boolean1&amp;gt;对于byte short int long而言，创建数组后，默认值为0；2&amp;gt;对于float double而言，默认值为0.03&amp;gt;对于char而言，默认为空格4&amp;gt;对于boolean而言，默认为fa">
+<meta name="description" content="数组一维数组初始化12345678//1.1数组的声明  int[] scores;//1.2初始化//静态初始化：初始化数组与给数组元素赋值同时进行  String[] names = new String[]&amp;#123;&amp;quot;张三&amp;quot;,&amp;quot;Eric&amp;quot;,&amp;quot;Frank&amp;quot;&amp;#125;; // String[] names = &amp;#123;&amp;quot">
 <meta name="keywords" content="java">
 <meta property="og:type" content="article">
 <meta property="og:title" content="java_01_Array">
 <meta property="og:url" content="http://yoursite.com/2018/11/12/java-01-Array/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="数组一维数组1.数组一旦初始化，长度不可变2.对于基本数据类型的变量创建的数组：    byte short int long float double char boolean1&amp;gt;对于byte short int long而言，创建数组后，默认值为0；2&amp;gt;对于float double而言，默认值为0.03&amp;gt;对于char而言，默认为空格4&amp;gt;对于boolean而言，默认为fa">
+<meta property="og:description" content="数组一维数组初始化12345678//1.1数组的声明  int[] scores;//1.2初始化//静态初始化：初始化数组与给数组元素赋值同时进行  String[] names = new String[]&amp;#123;&amp;quot;张三&amp;quot;,&amp;quot;Eric&amp;quot;,&amp;quot;Frank&amp;quot;&amp;#125;; // String[] names = &amp;#123;&amp;quot">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-11-12T14:30:33.577Z">
+<meta property="og:updated_time" content="2018-11-14T12:18:26.409Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="java_01_Array">
-<meta name="twitter:description" content="数组一维数组1.数组一旦初始化，长度不可变2.对于基本数据类型的变量创建的数组：    byte short int long float double char boolean1&amp;gt;对于byte short int long而言，创建数组后，默认值为0；2&amp;gt;对于float double而言，默认值为0.03&amp;gt;对于char而言，默认为空格4&amp;gt;对于boolean而言，默认为fa">
+<meta name="twitter:description" content="数组一维数组初始化12345678//1.1数组的声明  int[] scores;//1.2初始化//静态初始化：初始化数组与给数组元素赋值同时进行  String[] names = new String[]&amp;#123;&amp;quot;张三&amp;quot;,&amp;quot;Eric&amp;quot;,&amp;quot;Frank&amp;quot;&amp;#125;; // String[] names = &amp;#123;&amp;quot">
 
 
 
@@ -310,11 +310,13 @@
       
 
       
-        <h1 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h1><h2 id="一维数组"><a href="#一维数组" class="headerlink" title="一维数组"></a>一维数组</h2><p>1.数组一旦初始化，长度不可变<br>2.对于基本数据类型的变量创建的数组：<br>    byte short int long float double char boolean<br>1&gt;对于byte short int long而言，创建数组后，默认值为0；<br>2&gt;对于float double而言，默认值为0.0<br>3&gt;对于char而言，默认为空格<br>4&gt;对于boolean而言，默认为false<br>5&gt;对于引用类型的变量构成的数组而言，默认初始化值为null，以string为例<br>    <strong>*</strong>除了基本数据类型，其他都是引用类型<strong><strong>**</strong></strong></p>
-<h2 id="二维数组"><a href="#二维数组" class="headerlink" title="二维数组"></a>二维数组</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">int[][] j = new int[3][];   //如下例，对于二维数组先生成一个三个元素的数				    </span><br><span class="line">						    //组，此时这三个元素为引用类型，因为未初始化				    </span><br><span class="line">						    //所以此时这三个元素为Null</span><br><span class="line">//j[2][0] = 12;             //报错！同理，数组为引用类型，因为未初始化</span><br><span class="line">				            //所以j[2][0] = null，所以相当于一个空指针</span><br></pre></td></tr></table></figure>
+        <h1 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h1><h2 id="一维数组"><a href="#一维数组" class="headerlink" title="一维数组"></a>一维数组</h2><h3 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">//1.1数组的声明</span><br><span class="line">  int[] scores;</span><br><span class="line">//1.2初始化</span><br><span class="line">//静态初始化：初始化数组与给数组元素赋值同时进行</span><br><span class="line">  String[] names = new String[]&#123;&quot;张三&quot;,&quot;Eric&quot;,&quot;Frank&quot;&#125;; </span><br><span class="line">// String[] names = &#123;&quot;张三&quot;,&quot;Eric&quot;,&quot;Frank&quot;&#125;这也是可以的</span><br><span class="line">//动态初始化:分开进行</span><br><span class="line">  scores =  new int[4];</span><br></pre></td></tr></table></figure>
+<h3 id="相关说明"><a href="#相关说明" class="headerlink" title="相关说明"></a>相关说明</h3><p>1.数组一旦初始化，长度不可变<br>2.对于基本数据类型的变量创建的数组：<br>    byte short int long float double char boolean<br>1&gt;对于byte short int long而言，创建数组后，默认值为0；<br>2&gt;对于float double而言，默认值为0.0<br>3&gt;对于char而言，默认为空格<br>4&gt;对于boolean而言，默认为false<br>5&gt;对于引用类型的变量构成的数组而言，默认初始化值为null，以string为例<br>    <strong>*</strong>除了基本数据类型，其他都是引用类型<strong><strong>**</strong></strong></p>
+<h2 id="二维数组"><a href="#二维数组" class="headerlink" title="二维数组"></a>二维数组</h2><h3 id="初始化-1"><a href="#初始化-1" class="headerlink" title="初始化"></a>初始化</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">int[] scores = new int[10];</span><br><span class="line">String[][] names;</span><br><span class="line">//1.二维数组的初始化</span><br><span class="line">int[][] scores2 = new int[][]&#123;&#123;1,2,3&#125;,&#123;3,4,5&#125;,&#123;6&#125;&#125;; //静态初始化</span><br><span class="line"></span><br><span class="line">//names = new String[3][2];   //动态初始化方式一</span><br><span class="line">names = new String[3][];    //动态初始化方式二</span><br><span class="line">names[0] = new String[2];   //有点降维的意思</span><br><span class="line">names[1] = new String[]&#123;&quot;WHB&quot;,&quot;Frank&quot;,&quot;Eric&quot;&#125;;</span><br><span class="line">names[2] = new String[2];</span><br></pre></td></tr></table></figure>
+<h3 id="常见异常"><a href="#常见异常" class="headerlink" title="常见异常"></a>常见异常</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">int[][] j = new int[3][];   //如下例，对于二维数组先生成一个三个元素的数				    </span><br><span class="line">						    //组，此时这三个元素为引用类型，因为未初始化				    </span><br><span class="line">						    //所以此时这三个元素为Null</span><br><span class="line">//j[2][0] = 12;             //报错！同理，数组为引用类型，因为未初始化</span><br><span class="line">				            //所以j[2][0] = null，所以相当于一个空指针</span><br></pre></td></tr></table></figure>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">int[][] k = new int[3][];</span><br><span class="line">k[0] = new int[2];</span><br><span class="line">k[1] = new int[3];</span><br><span class="line">k[2] = new int[]&#123;1,2,3&#125;;</span><br><span class="line">for(int m = 0; m &lt; k.length ; m++)&#123;</span><br><span class="line">    System.out.println(k[m]);&#125;</span><br><span class="line">    System.out.println();</span><br><span class="line">for(int m = 0; m &lt; k.length ; m++)&#123;</span><br><span class="line">    for(int n = 0; n &lt; k[m].length ; n++)&#123;</span><br><span class="line">        System.out.print(k[m][n]+&quot; &quot;);</span><br><span class="line">	&#125;</span><br><span class="line">	System.out.println();</span><br><span class="line">&#125;</span><br><span class="line">System.out.println(k[2][0]);</span><br></pre></td></tr></table></figure>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">//输出结果如下</span><br><span class="line">[I@4554617c</span><br><span class="line">[I@74a14482</span><br><span class="line">[I@1540e19d</span><br><span class="line"></span><br><span class="line">0 0</span><br><span class="line">0 0 0</span><br><span class="line">1 2 3</span><br><span class="line"></span><br><span class="line">1</span><br></pre></td></tr></table></figure>
-<p>但是如若初始化第二维后，就按照第一维的规则来</p>
+<p>在未定义第二维的时候，k[2][0]为Null，定义了第二维后，k[2][0]为Int型</p>
 
       
     </div>
@@ -354,6 +356,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/11/13/java-02-OOP/" rel="prev" title="java-02-OOP">
+                java-02-OOP <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -430,7 +436,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -476,7 +482,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#数组"><span class="nav-number">1.</span> <span class="nav-text">数组</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#一维数组"><span class="nav-number">1.1.</span> <span class="nav-text">一维数组</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二维数组"><span class="nav-number">1.2.</span> <span class="nav-text">二维数组</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#数组"><span class="nav-number">1.</span> <span class="nav-text">数组</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#一维数组"><span class="nav-number">1.1.</span> <span class="nav-text">一维数组</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#初始化"><span class="nav-number">1.1.1.</span> <span class="nav-text">初始化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#相关说明"><span class="nav-number">1.1.2.</span> <span class="nav-text">相关说明</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二维数组"><span class="nav-number">1.2.</span> <span class="nav-text">二维数组</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#初始化-1"><span class="nav-number">1.2.1.</span> <span class="nav-text">初始化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#常见异常"><span class="nav-number">1.2.2.</span> <span class="nav-text">常见异常</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
