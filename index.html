@@ -239,6 +239,127 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/15/Java-OOP-Eg/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="HongbinW">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/11/15/Java-OOP-Eg/" itemprop="url">Java_OOP_Eg</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-15T21:25:22+08:00">
+                2018-11-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="重载"><a href="#重载" class="headerlink" title="重载"></a>重载</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">//定义两个Int型变量的和</span><br><span class="line">public int getSum(int i,int j)&#123;</span><br><span class="line">    return i+j;</span><br><span class="line">&#125;</span><br><span class="line">//定义三个int型变量的和</span><br><span class="line">public int getSum(int i,int j ,int k)&#123;</span><br><span class="line">    return i+j+k;</span><br><span class="line">&#125;</span><br><span class="line">//定义两个double型变量的和</span><br><span class="line">public double getSum(double d1,double d2)&#123;</span><br><span class="line">    return d1+d2;</span><br><span class="line">&#125;</span><br><span class="line">//定义三个double型变量的和</span><br><span class="line">public void getSum(double d1,double d2,double d3)&#123;</span><br><span class="line">    System.out.println(d1+d2+d3);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//这俩也构成重载</span><br><span class="line">public void method1(int i ,String str)&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">public void method1(String str,int i)&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="建立的类也是一种类型"><a href="#建立的类也是一种类型" class="headerlink" title="建立的类也是一种类型"></a>建立的类也是一种类型</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line">public class TestCar &#123;</span><br><span class="line">    public static void main(String[] args)&#123;</span><br><span class="line">        Car c1 = new Car();</span><br><span class="line">        c1.info();</span><br><span class="line"></span><br><span class="line">        c1.setName(&quot;奥迪&quot;);</span><br><span class="line">        c1.setWheel(4);</span><br><span class="line"></span><br><span class="line">        c1.info();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">class Factory&#123;</span><br><span class="line">    //制造厂</span><br><span class="line">    public Car produceCar()&#123;</span><br><span class="line">        return new Car(); //Car 也是一种类型</span><br><span class="line">    &#125;</span><br><span class="line">    public Car produceCar(String n ,int w)&#123;</span><br><span class="line">        Car c = new Car();</span><br><span class="line">        c.name = n;</span><br><span class="line">        c.wheel = w;</span><br><span class="line">        return c;</span><br><span class="line">    &#125;</span><br><span class="line">    public void describeCar(Car c)&#123;</span><br><span class="line">    c.info();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class Car&#123;</span><br><span class="line">    //1.属性</span><br><span class="line">    String name;</span><br><span class="line">    int wheel;</span><br><span class="line"></span><br><span class="line">    //2.方法</span><br><span class="line">    public void info()&#123;</span><br><span class="line">        System.out.println(&quot;name: &quot; + name + &quot; wheel: &quot; + wheel);</span><br><span class="line">    &#125;</span><br><span class="line">    public void show()&#123;</span><br><span class="line">        System.out.println(&quot;I&apos;m a car!&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">    public String getName()&#123;</span><br><span class="line">        return name;</span><br><span class="line">    &#125;</span><br><span class="line">    public void setName(String n)&#123;</span><br><span class="line">        name = n;</span><br><span class="line">    &#125;</span><br><span class="line">    public void setWheel(int w)&#123;</span><br><span class="line">        wheel = w;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/13/java-02-OOP/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -310,26 +431,72 @@
       
         
           
-            <h2 id="面向对象基础"><a href="#面向对象基础" class="headerlink" title="面向对象基础"></a>面向对象基础</h2><h3 id="面向对象思想"><a href="#面向对象思想" class="headerlink" title="面向对象思想"></a>面向对象思想</h3><p> 1.设计类，并设计类的成员（成员变量&amp;成员方法）<br> 2.通过类，来创建类的对象（或类的实例化）<br> 3.通过“对象.属性”或“对象.方法”调用，来完成相应的功能</p>
-<h3 id="创建的多个对象，彼此各自拥有一套类的属性。"><a href="#创建的多个对象，彼此各自拥有一套类的属性。" class="headerlink" title="创建的多个对象，彼此各自拥有一套类的属性。"></a>创建的多个对象，彼此各自拥有一套类的属性。</h3><h3 id="类的属性（成员变量）"><a href="#类的属性（成员变量）" class="headerlink" title="类的属性（成员变量）"></a>类的属性（成员变量）</h3><pre><code>成员变量 vs 局部变量
-相同点： 1.遵循变量声明的格式：修饰符  数据类型  变量名 =  初始化值
-         2.都有作用域
-不同点： 1.声明的位置不同：成员变量：声明在类里，方法外
-                          局部变量：声明在方法内以及方法的形参部分，代码块内
-         2.成员变量的修饰符有四个：public private protected 缺省
-           局部变量没有修饰符
-         3.初始化值：一定会有初始化值
-              成员变量：如果在声明的时候，不显式地赋值，那么不同数据类型会有不同的默认初始化值
-              局部变量：一定要显式地赋值。（没有默认初始化值）
-         4.二者在内存中存放的位置不同：成员变量存在堆空间中，局部变量存在栈空间中
-</code></pre><h3 id="类的方法：提供某种功能的实现"><a href="#类的方法：提供某种功能的实现" class="headerlink" title="类的方法：提供某种功能的实现"></a>类的方法：提供某种功能的实现</h3><pre><code>1)实例：public void eat(){}
+            <h2 id="面向对象基础"><a href="#面向对象基础" class="headerlink" title="面向对象基础"></a>面向对象基础</h2><h3 id="一、面向对象思想"><a href="#一、面向对象思想" class="headerlink" title="一、面向对象思想"></a>一、面向对象思想</h3><p> 1.面向对象编程的特征：封装性 继承性 多态性 （抽象性）<br> 2.类及类的构成成分：属性 方法 构造器 代码块 内部类<br> 3.创建的多个对象，彼此各自拥有一套类的属性。<br> 4.具体实现<br>   1）设计类，并设计类的成员（成员变量&amp;成员方法）<br>   2）通过类，来创建类的对象（或类的实例化）<br>   3）通过“对象.属性”或“对象.方法”调用，来完成相应的功能</p>
+<h3 id="二、类"><a href="#二、类" class="headerlink" title="二、类"></a>二、类</h3><h4 id="类的属性（成员变量）"><a href="#类的属性（成员变量）" class="headerlink" title="类的属性（成员变量）"></a>类的属性（成员变量）</h4><p>成员变量 vs 局部变量<br>相同点： 1.遵循变量声明的格式：修饰符  数据类型  变量名 =  初始化值<br>             2.都有作用域<br>不同点：<br>1.声明的位置不同：成员变量：声明在类里，方法外<br>                 局部变量：声明在方法内以及方法的形参部分，代码块内<br>2.成员变量的修饰符有四个：public private protected 缺省<br>  局部变量没有修饰符<br>3.初始化值：一定会有初始化值<br>成员变量：如果在声明的时候未显式地赋值，那么不同数据类型会有不同的默认初始化值<br>局部变量：一定要显式地赋值。（没有默认初始化值）<br>4.二者在内存中存放的位置不同：成员变量存在堆空间中，局部变量存在栈空间中</p>
+<h4 id="类的方法：提供某种功能的实现"><a href="#类的方法：提供某种功能的实现" class="headerlink" title="类的方法：提供某种功能的实现"></a>类的方法：提供某种功能的实现</h4><pre><code>1)实例：public void eat(){}
         public String getName(){}
         public void setName(String n){}
-  格式： 权限修饰符 返回值类型（void：无返回值/具体的返回值，如：String）方法名（形参）{ }
+  格式： 权限修饰符 返回值类型（void：无返回值/具体的返回值，如：String） 方法名（形参）{ }
 2）关于返回值类型：void：表明此方法不需要返回值
                    有返回值的方法：在方法的最后一定有 return + 返回值类型的变量
 3）方法内可以调用本类的其它方法和属性，但不能定义新的方法
-</code></pre><h3 id="方法的重载（overload"><a href="#方法的重载（overload" class="headerlink" title="方法的重载（overload)"></a>方法的重载（overload)</h3><p>要求： 1.同一类中 2.方法名必须相同 3.方法的参数列表不同（个数、类型）<br>补充： 方法的重载与方法的返回值类型没有关系！</p>
+</code></pre><h4 id="构造器"><a href="#构造器" class="headerlink" title="构造器"></a>构造器</h4><p>构造器作用：（1）创建对象（2）初始化对象的属性<br>几点说明：<br>1&gt;设计类时，若不显示声明类的构造器的话，程序会默认提供一个空参的构造器<br>2&gt;一旦显示地定义类的构造器，那么默认的构造器就不再提供<br>3&gt;如何声明类的构造器。格式：权限修饰符 类名 (){  }<br>4&gt;类的多个构造器之间构成重载<br>5&gt;类对象的属性赋值的先后顺序：（1）属性的默认初始化（根据类型）<br>                            （2）属性的显示的初始化（在类创建属性时）<br>                            （3）通过构造器给属性初始化<br>                            （4）通过对象.方法的方式给属性赋值</p>
+<h4 id="方法的重载（overload"><a href="#方法的重载（overload" class="headerlink" title="方法的重载（overload)"></a>方法的重载（overload)</h4><p>要求： 1.同一类中 2.方法名必须相同 3.方法的参数列表不同（个数、类型）<br>补充： 方法的重载与方法的返回值类型没有关系！</p>
+<h4 id="方法的参数传递（重点、难点）"><a href="#方法的参数传递（重点、难点）" class="headerlink" title="方法的参数传递（重点、难点）"></a><strong>方法的参数传递（重点、难点）</strong></h4><p> 1.形参：方法声明时，方法小括号内的参数。<br>   实参：调用方法时，实际传入的参数的值<br> 2.规则：Java中的参数传递机制：值传递机制<br>   1&gt;形参是基本数据类型的：将实参的值传递给形参的基本数据类型的变量<br>   2&gt;形参时引用数据类型的：将实参的引用类型变量的值（对应的堆空间对象实体的首地址）传递给形参的引用类型变量<br>     所以通过此方法形参和实参指向的是同一对象</p>
+<h4 id="this"><a href="#this" class="headerlink" title="this"></a>this</h4><p>1.可以用来修饰属性、方法、构造器，通常用于形参与成员变量重名，不重名this省略<br>2.this理解为当前对象或当前正在创建的对象。比如this.name,this.show()；<br>3.可以在构造器中通过”this(形参)”的方式显示地调用本类中其他重载的指定的构造器。<br>  要求：1.在构造器内部必须声明在首行！<br>        2.若一个类中有N个构造器，则最多有N-1个构造器使用了this(形参)</p>
+<h4 id="package-and-import"><a href="#package-and-import" class="headerlink" title="package and import"></a>package and import</h4><h5 id="package-声明源文件所在的包，写在程序的第一行。"><a href="#package-声明源文件所在的包，写在程序的第一行。" class="headerlink" title="package:声明源文件所在的包，写在程序的第一行。"></a>package:声明源文件所在的包，写在程序的第一行。</h5><ul>
+<li>每“.”一次，表示一层文件目录。</li>
+<li>包名都要小写。<h5 id="import"><a href="#import" class="headerlink" title="import:"></a>import:</h5></li>
+<li>1)显式导入指定包下的类或接口</li>
+<li>2)写在包的声明和源文件之间</li>
+<li>3)如果需要引入多个类或接口，那么就并列写出</li>
+<li>4)如果导入的类是java.lang包下的，如：System String Math等，就不需要显式的声明。</li>
+<li>5)理解.<em>的概念。比如java.util.</em>;</li>
+<li>6)如何处理同名类的导入。如：在util包和sql包下同时存在Date类。显示地使用</li>
+<li>7)import static 表示导入指定类的static的属性或方法</li>
+<li>8)导入java.lang.*只能导入lang包下的所有类或接口，不能导入lang的子包下的类或接口<h5 id="常用包"><a href="#常用包" class="headerlink" title="常用包"></a>常用包</h5>1.java.lang—-包含一些Java语言的核心类，如String、Math、Integer、System和Thread，提供常用功能。<br>2.java.net—-包含执行与网络相关的操作的类和接口。<br>3.java.io   —-包含能提供多种输入/输出功能的类。<br>4.java.util—-包含一些实用工具类，如定义系统特性、接口的集合框架类、使用与日期日历相关的函数。<br>5.java.text—-包含了一些java格式化相关的类<br>6.java.sql—-包含了java进行JDBC数据库编程的相关类/接口<br>7.java.awt—-包含了构成抽象窗口工具集（abstract window toolkits）的多个类，这些类被用来构建和管理应用程序的图形用户界面(GUI)。<br>8.java.applet—-包含applet运行所需的一些类。<h4 id="类的初始化的内存解析"><a href="#类的初始化的内存解析" class="headerlink" title="类的初始化的内存解析"></a>类的初始化的内存解析</h4>内存划分的结构：<br>栈（stack)：局部变量、对象的引用名，数组的引用名<br>堆（heap)：new出来的“东西”（如：对象的实体，数组的实体）<br>方法区：含字符串常量<br>静态域：声明为static的变量<h3 id="三、面向对象的特性"><a href="#三、面向对象的特性" class="headerlink" title="三、面向对象的特性"></a>三、面向对象的特性</h3><h4 id="封装性"><a href="#封装性" class="headerlink" title="封装性"></a>封装性</h4>  问题：当创建了类的对象以后，如果直接通过“对象.属性”的方式对响应的对象属性赋值的话，可能会出现不满足实际情况的以外，我们考虑不让对象来直接作用属性，而是通过“对象.方法”的形式来控制对象对属性的访问。<br>  解决方法：（封装性的思想）①将类的属性私有化,②通过公共的方法（set&amp;get)来是实现调用</li>
+</ul>
+<p>权限修饰符：public protected 缺省 private</p>
+<table>
+<thead>
+<tr>
+<th>修饰符</th>
+<th>类内部</th>
+<th>同一个包</th>
+<th>子类</th>
+<th>任何地方</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>public</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td>protected</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td>缺省</td>
+<td>Yes</td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td>private</td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>四种权限均可修饰属性、方法、构造器；对于类来说，只有pulic和缺省</p>
 
           
         
@@ -1222,7 +1389,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
