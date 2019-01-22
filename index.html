@@ -239,6 +239,939 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/22/IO/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="HongbinW">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/01/22/IO/" itemprop="url">IO</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-22T15:28:05+08:00">
+                2019-01-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>1.java.io包下<br>File类：java程序中，此类的一个对象就对应着硬盘中的一个文件或网络中的一个资源。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">File file1 = new File(&quot;D://io//helloworld.txt&quot;);</span><br><span class="line">File file2 = new File(&quot;D://io//io1&quot;);</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>1.File既可以表示一个文件，也可以表示一个文件目录<br>2.File类的对象是与平台无关的<br>3.File类针对于文件或文件目录，只能进行新建、删除、重命名、上层目录等，如果涉及到访问文件的内容，File是无能为力的，只能使用IO流下提供的输入输出流实现。<br><strong>&gt;4.常把File类的对象作为形参传递给相应的输入输出流的构造器中</strong></p>
+</blockquote>
+<p>2.IO流的结构<br>见图片<br><img src="D:\git\Git\Hexo\source\_posts\IO体系流.png" alt="IO流的结构" title="IO体系流"></p>
+<p>3.IO流的划分<br>1)按照流的流向不同：输入流 输出流（站位于程序的角度）<br>2)按照流中的数据单位的不同：字节流 字符流（纯文本文件txt）<br>3)按照流的角色的不同：节点流 处理流 （直接作用于文件上是节点流（4个），其余都是处理流）</p>
+<p>4.重点<br>抽象基类：        节点流（文件流）             缓冲流(处理流的一种)<br>InputStream       FileInputStream(处理字节)    BufferedInputStream<br>OutputStream      FileOutputStream(处理字节)   BufferedOutputStream<br>Reader            FileReader(处理字符)         BufferedReader<br>Writer            FileWriter(处理字符)         BufferedWriter</p>
+<blockquote>
+<p>FileInputStream(int read(byte[] b))<br>FileOutputStream(void write(b,0,len))<br>FileReader(int read(char[] c))<br>FileWriter(void write(c,0,len))</p>
+</blockquote>
+<blockquote>
+<p>BufferedInputStream(int read(byte[] b))<br>BufferedOutputStream(void write(b,0,len))    flush()<br>BufferedReader(int read(char[] c))或(String readLine())   readline()<br>BufferedWriter(void write(c,0,len))或void write(String str)  flush()</p>
+</blockquote>
+<p>注：</p>
+<blockquote>
+<p>1.从硬盘中读入一个文件，要求此文件一定要存在，若不存在则报FileNotFoundException的异常<br>2.从程序中输出一个文件到硬盘，文件可以不存在。若不存在，则创建一个实现输出，若存在，则将原存在文件覆盖<br>3.真正开发时，使用缓冲流代替节点流<br>4.最后要关闭相应的流，先关输出流再关输入流（finally)</p>
+</blockquote>
+<p>5.其他的流<br>1)转换流：实现字节流与字符流之间的转换<br>  InputStreamReader：输入时，实现字节流到字符流的转换，提高操作效率（数据是文本文件）    —-&gt;解码：从字节数组到字符串<br>  OutputStreamWriter：输出时，实现字符流到字节流的转换。<br>                —-&gt;编码：字符串到字节数组</p>
+<p>2)标准输入输出流<br>System.in：从键盘输入数据<br>System.out：从显示器输出数据</p>
+<p>3)打印流</p>
+<p>4)数据流</p>
+<p>5)对象流</p>
+<p>6)随机存取文件流</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/17/枚举类和注解/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="HongbinW">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/01/17/枚举类和注解/" itemprop="url">枚举类和注解</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-17T15:22:21+08:00">
+                2019-01-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>一、枚举类<br>1.如何自定义枚举类。枚举类：类的对象时有限个的，确定的。<br>(1)私有化类的构造器,保证不能够在类的外部创建对象<br>(2)在类的内部创建枚举类的实例。声明为:public static final<br>(3)若类有属性，属性声明为private final。此属性在构造器中赋值</p>
+<p>2.使用enum关键字定义枚举类<br>    &gt;2.1常用的方法：values()  valueOf(String name)<br>    &gt;2.2枚举类如何实现接口：<br>        ①让类实现子接口，类的对象共享同一套接口的抽象方法的实现<br>        ②让类的每一个对象都去实现接口的抽象方法，进而通过类的对象调用被          重写的抽象方法时，执行效果不同<br>说明：<br>必须将枚举对象放在最上面，可跟抽象方法，注意中间用逗号隔开。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">SPRING(&quot;Spring&quot;,&quot;warm&quot;)&#123;</span><br><span class="line">    public void show()&#123;</span><br><span class="line">        System.out.println(&quot;春天在哪里&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;,</span><br><span class="line">SUMMER(&quot;Summer&quot;,&quot;hot&quot;)&#123;</span><br><span class="line">    public void show()&#123;</span><br><span class="line">        System.out.println(&quot;生如夏花&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;,</span><br><span class="line">AUTUMN(&quot;Autumn&quot;,&quot;cool&quot;)&#123;</span><br><span class="line">    public void show()&#123;</span><br><span class="line">        System.out.println(&quot;秋高气爽&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;,</span><br><span class="line">WINTER(&quot;Winter&quot;,&quot;cold&quot;)&#123;</span><br><span class="line">    public void show()&#123;</span><br><span class="line">        System.out.println(&quot;白雪皑皑&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<p>二、注解<br>1.JDK提供的常用的三个注解：<br>@Override: 限定重写父类方法, 该注释只能用于方法<br>@Deprecated: 用于表示某个程序元素(类, 方法等)已过时<br>@SuppressWarnings: 抑制编译器警告</p>
+<p>2.如何自定义注解<br>以SuppressWarnings为例进行创建即可</p>
+<p>3.元注解<br>对已有的注解进行注解<br>Retention:(指明生命周期）SOURCE CLASS RUNTIME<br>Target:(能修饰什么） TYPE<br>Documented:javadoc<br>Inherited:继承性</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/17/Generic/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="HongbinW">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/01/17/Generic/" itemprop="url">Generic</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-17T15:03:27+08:00">
+                2019-01-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><strong>1.泛型在集合中的使用</strong><br>1&gt;在集合中不使用泛型<br>2&gt;在集合中使用泛型<br>具体例子见TestGeneric</p>
+<p>2.自定义泛型类、泛型接口、泛型方法<br>1&gt;自定义泛型DAO<br>  实例化和继承时可以具体化泛型类型<br>说明：<br>①.对象实例化时不指定泛型，默认为：Object。<br>②.泛型不同的引用不能相互赋值。<br>③.加入集合中的对象类型必须与指定的泛型类型一致。<br>④.静态方法中不能使用类的泛型。<br>⑤.如果泛型类是一个接口或抽象类，则不可创建泛型类的对象。<br>⑥.不能在catch中使用泛型<br>⑦.从泛型类派生子类，泛型类型需具体化<br>2&gt;泛型方法<br> pulic <e> E get(E e){<br>    return e;<br>}<br>如果泛型方法中的泛型(比如E)跟泛型类中的泛型(比如T)不一样，那么泛型方法处可加static，因为若为T，则加载类的时候，T的类型未知，所以报错，而E，是要在使用时确定类型，所以是可以的。</e></p>
+<p>3.泛型与集成的关系<br>A类是B类的子类，G是带泛型声明的类或接口。则G<a>不是G<b>的子类</b></a></p>
+<p>4.通配符：？<br>A类是B类的子类，G是带泛型声明的类或接口。则G&lt;?&gt;是G<a>G<b>的父类<br>①以List&lt;?&gt;为例，能读取其中的数据，因为无论存储的是什么类型的元素，其一定是   Object类或其子类的。<br>②然而不可以向其写入数据，因为没有指明可以存放到其中的类型，Null除外</b></a></p>
+<p>5.? extends A:    A及A的子类<br>  ? super A:        A及A的父类    </p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/16/Collection/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="HongbinW">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/01/16/Collection/" itemprop="url">Collection</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-16T13:53:41+08:00">
+                2019-01-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>一、对象的存储<br>①数组（基本数据类型 &amp; 引用数据类型）  ②集合（引用数据类型）<br>数组弊端：①一旦创建，其长度不可变。②实际存储量不可直接知<br>二、集合框架</p>
+<p>—–Collection接口<br>        —-Set：元素无序，不可重复的集合（类似集合）<br>                —-HashSet（主要的实现类）<br>    —-LinkedHashSet（是HashSet一个子类，遍历时为“顺序”）<br>    —-TreeSet(可以按照添加进元素的指定属性进行排序）<br>        —-List:元素有序，可重复的集合（“动态”数组）<br>                —-ArrayList（主要的实现类）<br>             —-LinkedList(链表实现，用于频繁的插入删除操作)<br>            —-Vector(古老的实现类、线程安全的)<br>—–Map接口：具有映射关系“key-value对”的集合（类似函数）<br>                —-HashMap（主要实现类）<br>    —-LinkedHashMap（HashMap子类，遍历时为“顺序”）<br>    —-TreeMap（需要按照key所在类的指定属性进行排序，要求key是同                类的)<br>    —-Hashtable:古老实现类，线程安全，不可添加Null键<br>    —-子类:Properties：用来处理属性文件<br>—–Iterator接口：用来遍历集合Collection元素，Map有自己遍历的方法</p>
+<p>Collections工具类，操作Collection及Map的工具类，大部分为static的方法。</p>
+<p>说明：<br>1&gt;.Collection方法：<br>①<strong>add(Object obj)</strong>,addAll(Collection c1),<strong>size()</strong>,clear(),isEmpty()<br>②<strong>remove(Object obj)</strong>,removeAll(Collection c1),retainAll(Collection c1),equals(Object obj),set(int Index,Object obj),contains(Object obj),containsAll(Collection c1),hashCode()<br>（该组都与equals有关）<br>③<strong>iterator()</strong>,toArray()</p>
+<p>2&gt;.List增加的方法：<br>remove(int index),set(int index,Object obj),get(int index),add(int index, Object obj)</p>
+<p>添加进List集合的元素（或对象）所在的类一定要重写equals()方法</p>
+<p>3&gt;.Set接口使用的方法基本都是Collection接口定义的<br>1.添加进Set集合中的元素所在类一定要重写equals()和hashCode()，且要求保持一致<br>2.无序性，无序性不等于随机性.无序性指的是元素在低层存储的位置是无序的<br>3.不可重复性：向Set中添加进相同元素（内容）时，后面的不能添加进去(size()是不变的）</p>
+<p>4&gt;.TreeSet<br>1.要求添加进集合的元素是同一类的<br>2.自然排序 VS 定制排序<br>①自然排序：要求自定义类实现java.lang.Comparable接口并重写其compareTo(Object obj)的抽象方法在此方法中，指明按照自定义类的哪个属性进行排序<br>②定制排序：创建实现Comparator接口的实现类的对象，在实现类中重写compare()方法，在compare()方法中指明按照元素哪个属性进行排序，将此Comparator接口的实现类的对象作为形参传递给TreeSet的构造器中</p>
+<blockquote>
+<p>要求重写的compareTo(),compare()方法与equals(),hashCode()方法保持一致</p>
+</blockquote>
+<p>5&gt;.Map接口<br>常用方法：添加、修改put(Object key,Object value),删除remove(Object key),获取get(Object key),遍历用size(),keySet(),values(),entrySet()<br>1.key值是不可重复的,相当于Set来存，value可以重复，使用Collection来存。<br>  一个key-value对构成一个entry(Map.Entry),entry用Set来存放<br>2.TreeMap类似于TreeSet</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/13/OOP总结/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="HongbinW">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/01/13/OOP总结/" itemprop="url">OOP总结</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-13T11:24:17+08:00">
+                2019-01-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="一、面向对象三大主线："><a href="#一、面向对象三大主线：" class="headerlink" title="一、面向对象三大主线："></a>一、面向对象三大主线：</h1><p>1.类及类的成分<br>2.面向对象的三大特性<br>3.其他关键字：this super import package abstract static final interface等</p>
+<h2 id="1-类及类的成分"><a href="#1-类及类的成分" class="headerlink" title="1.类及类的成分"></a>1.类及类的成分</h2><h3 id="1-1-Java程序关注于类的设计。"><a href="#1-1-Java程序关注于类的设计。" class="headerlink" title="1.1 Java程序关注于类的设计。"></a>1.1 Java程序关注于类的设计。</h3><p>类从代码的角度：并列关系<br>从执行、设计的角度：关联关系，继承关系，聚合关系<br>Class A{</p>
+<p>}</p>
+<p>Class B{<br>    A a = new A();    //关联关系<br>}</p>
+<h3 id="1-2-类的成分：-属性-方法-构造器-代码块-内部类"><a href="#1-2-类的成分：-属性-方法-构造器-代码块-内部类" class="headerlink" title="1.2 类的成分： 属性 方法 构造器 代码块 内部类"></a>1.2 类的成分： 属性 方法 构造器 代码块 内部类</h3><h4 id="1-2-1-属性"><a href="#1-2-1-属性" class="headerlink" title="1.2.1 属性:"></a>1.2.1 属性:</h4><p>①变量的分类：成员变量（属性） VS 局部变量（方法的形参、方法内部、代码块内部）<br>         基本数据类型（8种） VS 引用数据类型（数组、类、接口，默认Null）<br>②属性的声明格式：修饰符 数据类型 变量名 = 初始化值<br>  修饰符：public protected（缺省） private<br>③对属性赋值的操作：1.默认初始化 2.显示地初始化 3.代码块 4.构造器 ；5.调用方法<br>（2、3根据前后位置顺序执行）<br>（前四个是初始化，第5个是对属性的修改）</p>
+<h4 id="1-2-2-方法："><a href="#1-2-2-方法：" class="headerlink" title="1.2.2 方法："></a>1.2.2 方法：</h4><p>①格式： 修饰符（其他关键字static final abstract) 返回值类型 方法名 （形参列表）{//方法体}<br>②方法的重载（Overload)  vs  方法的重写（override）<br>③方法的参数传递机制：值传递（难点）<br>1&gt;形参是基本数据类型的：将实参的值传递给形参的基本数据类型的变量<br>2&gt;形参时引用数据类型的：将实参的引用类型变量的值（对应的堆空间对象实体的首地址）传递给形参的引用类型变量。（所以此处形参和实参指向的是同一对象）</p>
+<h4 id="1-2-3-构造器"><a href="#1-2-3-构造器" class="headerlink" title="1.2.3 构造器"></a>1.2.3 构造器</h4><p>①作用：1.创建类的对象 2.成员变量的初始化<br>②构造器也是可以重载的</p>
+<h4 id="1-2-4-代码块"><a href="#1-2-4-代码块" class="headerlink" title="1.2.4 代码块"></a>1.2.4 代码块</h4><p>①作用：初始化类的成员变量<br>②分类：静态代码块 VS 非静态代码块</p>
+<h4 id="1-2-5-内部类"><a href="#1-2-5-内部类" class="headerlink" title="1.2.5 内部类"></a>1.2.5 内部类</h4><p>①分类：成员内部类（静态成员 vs 非静态成员） vs 局部内部类（方法内部声明的类）<br>掌握三点：1&gt;如何创建成员内部类的对象（如：创建Bird类和Dog类的对象）<br>          2&gt;如何区分调用外部类与内部类的变量（尤其是变量重名时）<br>          3&gt;局部内部类的使用    //见TestInnerClass1</p>
+<h3 id="1-3-类的初始化（创建类的对象）"><a href="#1-3-类的初始化（创建类的对象）" class="headerlink" title="1.3 类的初始化（创建类的对象）"></a>1.3 类的初始化（创建类的对象）</h3><h4 id="1-3-1-如何创建类的对象"><a href="#1-3-1-如何创建类的对象" class="headerlink" title="1.3.1 如何创建类的对象"></a>1.3.1 如何创建类的对象</h4><p>如：Person p = new Person();</p>
+<h4 id="1-3-2-内存解析"><a href="#1-3-2-内存解析" class="headerlink" title="1.3.2 内存解析"></a>1.3.2 内存解析</h4><p>①栈：局部变量、对象的引用名、数组的引用名<br>  堆：new出来的东西<br>  方法区：（字符串常量池）<br>  静态域：存放类中静态的变量<br>②如何理解创建的对象在内存中加载的过程</p>
+<h4 id="1-3-3-子类对象实例化的全过程"><a href="#1-3-3-子类对象实例化的全过程" class="headerlink" title="1.3.3 子类对象实例化的全过程"></a>1.3.3 子类对象实例化的全过程</h4><p>SubClass sc = new SubClass();<br>创建的过程中会加载父类以及父类的父类直至Object，会加载到所有的构造器</p>
+<h2 id="2-面向对象的三大特性"><a href="#2-面向对象的三大特性" class="headerlink" title="2.面向对象的三大特性"></a>2.面向对象的三大特性</h2><h3 id="2-1封装性"><a href="#2-1封装性" class="headerlink" title="2.1封装性"></a>2.1封装性</h3><p>①通过私有化类的成员变量，通过公共的getter和setter方法来调用和修改<br>②还可以对类的其他结构进行“封装”<br>③权限修饰符：public protected 缺省 private</p>
+<h3 id="2-2继承性"><a href="#2-2继承性" class="headerlink" title="2.2继承性"></a>2.2继承性</h3><p>通过让类A继承另一个类B，就可以获取类B中的结构（属性、方法、构造器等）<br>A extends B<br>java中类的继承性是单继承的（一个类只能继承一个父类）</p>
+<h3 id="2-3多态性"><a href="#2-3多态性" class="headerlink" title="2.3多态性"></a>2.3多态性</h3><p>①体现：方法的重载与重写；子类对象的多态性 Person p = new Student();<br>②子类对象多态性的使用：虚拟方法调用<br>③向上转型  向下转型<br>if(p instanceof Student)    //避免出现ClassException的异常<br>    Student s = (Student)p;</p>
+<h2 id="3-其他关键字"><a href="#3-其他关键字" class="headerlink" title="3.其他关键字"></a>3.其他关键字</h2><h3 id="3-1-this"><a href="#3-1-this" class="headerlink" title="3.1 this"></a>3.1 this</h3><p>修饰属性、方法、构造器，表示当前对象或当前正在创建的对象</p>
+<h3 id="3-2-super"><a href="#3-2-super" class="headerlink" title="3.2 super"></a>3.2 super</h3><p>修饰属性、方法、构造器，显示地调用父类的响应的结构，尤其是子父类有重名的方法和属性时</p>
+<h3 id="3-3-static"><a href="#3-3-static" class="headerlink" title="3.3 static"></a>3.3 static</h3><p>修饰属性、方法、代码块、内部类，随着类的加载而加载</p>
+<h3 id="3-4-final"><a href="#3-4-final" class="headerlink" title="3.4 final"></a>3.4 final</h3><p>修饰类、属性、方法，表示最终的</p>
+<h3 id="3-5-abstract"><a href="#3-5-abstract" class="headerlink" title="3.5 abstract"></a>3.5 abstract</h3><p>修饰类、方法<br>不能与static final private共用</p>
+<h3 id="3-6-interface"><a href="#3-6-interface" class="headerlink" title="3.6 interface"></a>3.6 interface</h3><p>接口，（与类并列的结构），无构造器，定义的是功能<br>类与接口之间通过implements发生关系</p>
+<h3 id="5-7-package-import"><a href="#5-7-package-import" class="headerlink" title="5.7 package / import"></a>5.7 package / import</h3>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/24/java-04-exception/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="HongbinW">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/12/24/java-04-exception/" itemprop="url">java-04-exception</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-24T11:01:08+08:00">
+                2018-12-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="һ���쳣��ϵ�u"><a href="#һ���쳣��ϵ�u" class="headerlink" title="һ���쳣��ϵ�ṹ"></a>һ���쳣��ϵ�ṹ</h2><p>1.java.lang.Throwable<br>        —-Error:���󣬳����в����д���<br>        —-Exception���쳣��Ҫ���ڱ�д����ʱ��Ҫ���ǵ�����Щ�쳣�Ĵ���<br>                ——����ʱ�쳣���ڱ����ڼ���ֵģ�javacʱ�����쳣��                        ——����ʱ�쳣���������ڼ���ֵģ�javaʱ�����쳣��<br>ArrayIndexOutOfBoundsException<br>ArithmeticException<br>ClassCastException<br>NullPointerException<br>2.��ִ��һ������ʱ��������쳣�����쳣֮��Ĵ���Ͳ���ִ�У�<br>3.��������ʱ�쳣��˵�����Բ���ʾ�ش��������ڱ���ʱ�쳣��˵��������ʾ�ش���</p>
+<h2 id="������δ���Exception�쳣"><a href="#������δ���Exception�쳣" class="headerlink" title="������δ���Exception�쳣"></a>������δ���Exception�쳣</h2><p><strong>ץ��ģ��</strong>��<br>1.<strong>���ס�</strong>��������ִ�д���ʱ��һ�������쳣���ͻ����쳣�Ĵ��봦����һ����Ӧ�����͵Ķ���<br>          �����˶����׳������Զ��׳����ֶ��׳���<br>          &gt;һ���׳����쳣��Ķ��󣬳������ִֹ��<br>          &gt;���쳣��Ķ����׸������ĵ�����<br>2.<strong>��ץ��</strong>��ץס��һ���׳������쳣��Ķ������ץ����Ϊ�쳣����ķ�ʽ<br>          java�ṩ�����ַ�ʽ��������һ���쳣��Ķ���<br>  ����ʽһ��<br>          try{<br>            //���ܳ����쳣�Ĵ���<br>          }catch(Exception e1){<br>            //����ķ�ʽ1<br>          }catch(Exception e2){ //����else if<br>            //����ķ�ʽ2<br>          }finally{<br>            //һ��Ҫִ�еĴ���<br>          }<br>ע��1.try�������ı����������ھֲ�����������try{}��䣬�Ͳ��ܱ�����<br>    2.finally{}����û��<br>    3.catch����ڲ��Ƕ��쳣����Ĵ���<br>        &gt;getMessage();       printStackTrace;       �Զ��崦��<br>    4.�����ж��catch��䣬try���׳����쳣������������ȥƥ��catch�е��쳣������ͣ�һ������<br>      ��ִ��catch�еĴ��룬ִ���꣬���������Ķ���catch���<br>    5.����쳣�����ˣ����������ִ��<br>    6.��catch�ж���쳣�����ǡ����С���ϵ��˭��˭�¶���<br>      ��catch���ǰ�����ϵ����ΧС��д����<br>    7.finally�д�ŵ���һ���ᱻִ�еĴ��룬��ʹcatch�������쳣���Լ��Ƿ���return���<br>    8.try-catch�ǿ����໥Ƕ�׵�</p>
+<p>  ����ʽ����<br>  �ڷ���������������ʾ��ʹ��throws + �쳣���ͣ�Eg��TestException2)<br>  ˵������һ��һ�������ף��׸�������ߣ�����Ҫ��һ������������쳣</p>
+<p>3.����ֶ����׳�һ���쳣��<br>  �ڷ������ڲ�������ʹ��throw + �쳣��������ֶ��׳�һ���쳣<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">//�Ƚ�����Բ�İ뾶��С</span><br><span class="line">    public int compareTo(Object obj)&#123;</span><br><span class="line">        if(this == obj)</span><br><span class="line">            return 0;</span><br><span class="line">        else if(obj instanceof Circle)&#123;</span><br><span class="line">            Circle c = (Circle)obj;</span><br><span class="line">            if(this.radius &gt; c.radius)</span><br><span class="line">                return 1;</span><br><span class="line">            else if(this.radius == c.radius)</span><br><span class="line">                return 0;</span><br><span class="line">            else</span><br><span class="line">                return -1;</span><br><span class="line">        &#125;</span><br><span class="line">        else &#123;  //obj�������Circle��ʵ��</span><br><span class="line">            //�ֶ��׳�һ���쳣</span><br><span class="line">//            throw new RuntimeException(&quot;�������������!&quot;);</span><br><span class="line">            throw new MyException(&quot;�������������!&quot;);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
+<p>4.����Զ���һ���쳣�ࣿ</p>
+<blockquote>
+<p>�ֶ����׳�һ���쳣�������׳������ֳɵ��쳣��Ķ���֮�⣬�������׳�һ���Զ�����쳣��Ķ���<br>1.�Զ����쳣��̳����е��쳣<br> 2.�ṩһ�����кţ��ṩ�������صĹ�����</p>
+</blockquote>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/01/java-03-adclass2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="HongbinW">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/12/01/java-03-adclass2/" itemprop="url">java-03-adclass2</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-01T22:01:00+08:00">
+                2018-12-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="static"><a href="#static" class="headerlink" title="static"></a>static</h3><p>tatic,��̬�ģ����������������ԡ�����������飨��ʼ���飩���ڲ���</p>
+<p>static�������ԣ����������<br>1.���ഴ�������ж��󣬶�������һ������<br>2.������һ������Դ����Խ����޸ģ��ᵼ����������Դ����Ե�һ������  VS  ʵ����������static�����������������ӵ��һ�׸������޸�ʱ������������Ӱ��<br>3.�����������ļ��ض����صģ���ʹû��ʵ��������Ҳ���ڴ�ľ�̬���У����Ҷ�һ��<br>4.��̬��������ֱ��ͨ������.�����������ʽ������<br>5.������ļ��������ڶ���ģ����Ե����˶����Ժ󣬿��ԡ�����.������������ã����ǡ���.ʵ���������ǲ��е�<br>6.����������ھ�̬���С�</p>
+<p>static���η������෽������<br>1.������ļ��ض����أ����ڴ���Ҳ�Ƕ�һ��<br>2.����ֱ��ͨ������.�෽�����ķ�ʽ������<br>3.�ھ�̬�����ڲ������Ե��þ�̬���Ի򷽷��������ܵ��÷Ǿ�̬�����Ի򷽷�����֮���Ǿ�̬����ʱ���Ե��þ�̬�����Ի򷽷�����Ҫ��Ϊ���ش������⣩<br>    &gt;��̬�����в�����this��super�ؼ��֣���Ϊthis��superָ���Ƕ���<br>ע����̬�Ľṹ��static�����ԡ�����������顢�ڲ��ࣩ����������Ҫ���ڷǾ�̬�ṹ��ͬʱ������Ҳ���ڷǾ�̬�ṹ</p>
+<h4 id="����gʽ"><a href="#����gʽ" class="headerlink" title="����ģʽ"></a>����ģʽ</h4><p>������⣺ʹ��һ����ֻ�ܹ�����һ������<br>ʵ�ַ�ʽ������ʽ &amp; ����ʽ<br><strong>����ʽ</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">class Singleton&#123;</span><br><span class="line">    //1.˽�л���������ʹ��������ⲿ���ܹ����ô˹�����</span><br><span class="line">    private Singleton()&#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    //2.������ڲ�����һ�����ʵ��</span><br><span class="line">    private static Singleton instance = new Singleton();</span><br><span class="line">    //3.˽�л��˶���ͨ�������ķ��������á�</span><br><span class="line">    //4.�˹����ķ���ֻ��ͨ���������ã���������Ϊstatic��ͬʱ���ʵ��Ҳ����Ϊstatic������</span><br><span class="line">    public static Singleton getInstance()&#123;</span><br><span class="line">        return instance;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><strong>����ʽ</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">class Singleton1&#123;</span><br><span class="line">    private Singleton1()&#123;</span><br><span class="line">    &#125;</span><br><span class="line">    private static Singleton1 instace = null;</span><br><span class="line">    public static Singleton1 getInstace()&#123;</span><br><span class="line">        if(instace == null)	//���ܴ����̰߳�ȫ���⣡</span><br><span class="line">            instace = new Singleton1(); //�õ�ʱ���ٴ���</span><br><span class="line">        return instace;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="main-����"><a href="#main-����" class="headerlink" title="main()����"></a>main()����</h3><p>1.main()��һ��������Ҳ���Ա����ã���ͬʱҲ�����������ǳ�������<br>2.��main���������β�<br> Idea:Run-Edit Configuration-Program arguments<br> CMD: java file.java<br>      javac file “abc” “def” “cjy”</p>
+<h3 id="�����"><a href="#�����" class="headerlink" title="�����"></a>�����</h3><p>��ĵ��ĸ���Ա<br>���ã���ʼ���������<br>1.�������������εĻ�����ôֻ��ʹ��static<br>2.���ࣺ<br>    ��̬����飺<br>    1.������������<br>    2.������ļ��ض����أ�����ֻ������һ�Σ������ٴ�������Ȳ������������ٴμ��أ�<br>    3.�����̬�����֮�䰴��˳��ṹִ��<br>    4.��̬������ִ��Ҫ���ڷǾ�̬������ִ��<br>    5.��̬�Ĵ������ֻ��ִ�о�̬�Ľṹ�������ԡ��෽����</p>
+<pre><code>�Ǿ�̬����飺
+1&gt;���Զ�������ԣ���̬&amp;�Ǿ�̬�����г�ʼ������,ͬʱҲ���Ե��ñ��������ķ���
+2&gt;���������������
+3&gt;һ�����У������ж���Ǿ�̬����飬�������鰴��˳��ṹִ��
+4&gt;ÿ����һ����Ķ��󣬷Ǿ�̬�����ͼ���һ��
+5&gt;�Ǿ�̬������ִ��Ҫ���ڹ�����
+</code></pre><p>�������Ը�ֵ�Ĳ�����1&gt;Ĭ�ϵĳ�ʼ��<br>2&gt;��ʾ�ĳ�ʼ����������ʼ�����˴������ṹ����˳��ִ�У�<br>3&gt;�������и�ֵ<br>—————-�����Ƕ�������Գ�ʼ������—————<br>4&gt;ͨ�������Զ�������Խ����޸�</p>
+<p>ע�����漰���̳У���˳��Ϊ�Ӹ���—&gt;���࣬�Ⱦ�̬—-&gt;�Ǿ�̬—-&gt;������<br>Eg��testdaimakuai.TestLeaf</p>
+<h3 id="final�ؼ���"><a href="#final�ؼ���" class="headerlink" title="final�ؼ���"></a>final�ؼ���</h3><p>final:���յģ������������ࡢ���ԡ�����</p>
+<p>1.final�����ࣺ�����Ͳ��ܱ��̳У��磺String�ࡢStringBuffer�ࡢSystem��<br>2.final���η�������������Ͳ��ܱ���д���磺Object���getClass()����<br>3.final�������ԣ�������Ծ���һ��������һ����ʼ���󣬲����ٱ���ֵϰ���ϣ������ô�д�ַ���ʾ<br>    �˳�������ʹ��Ĭ�ϳ�ʼ����������ʾ�ظ�ֵ������顢��������Ҳ����˵�ڶ������֮ǰ����ֵ��ϣ����Բ���ͨ��������ֵ��<br>    ������static final���Σ�ȫ�ֳ�����</p>
+<h3 id="����abstract-���ص㣩"><a href="#����abstract-���ص㣩" class="headerlink" title="����abstract ���ص㣩"></a>����abstract ���ص㣩</h3><p>�����࣬������ģ�ͻ���Щ�����޷�ȷ��ȫ��ʵ�֣��������������ṩ����ʵ�ֵĶ������<br>abstract������ģ��������������ࡢ����</p>
+<p>1.abstract�����࣬������<br>1&gt;���ɱ�ʵ����<br>2&gt;�������й�������Ϊ������ĵ��ã��������඼�й�������<br>3&gt;���󷽷����ڵ���һ���ǳ����ࣨ��Ϊ������ǳ����࣬�����ʵ�����������󷽷���û�з�����ģ�<br>4&gt;�������п���û�г��󷽷�<br>5&gt;�������漰һ���࣬����Ҫ���������ʵ����ʱ�򣬾Ϳ��Կ��ǽ�������Ϊ����ģ���������ʵ�������ĳ��󷽷���</p>
+<p>2.abstract���η��������󷽷�<br>1&gt;��ʽ��û�з����壬����{}���磺public abstract void eat();<br>2&gt;���󷽷�ֻ������Ĺ��ܣ������ִ�У������̳г���������࣬��������ʵ�֣���д��<br>3&gt;������̳��˳����࣬����д�����еĳ��󷽷�������������ʵ����<br>4&gt;������̳��˳����࣬��û����д���еĳ��󷽷�����ζ�Ŵ����м̳��˳������еĳ��󷽷���������������Ϊ�����</p>
+<h3 id="�ӿ�interface���ص㣩"><a href="#�ӿ�interface���ص㣩" class="headerlink" title="�ӿ�interface���ص㣩"></a>�ӿ�interface���ص㣩</h3><p>�ӿڣ�Interface��   �����ಢ�е�һ������<br>1.�ӿڿ��Կ�����һ������ĳ����ࡣ�ǳ�������󷽷���һ�����ϣ����ܰ��������Լ�һ��ķ�����<br>2.�ӿ���û�й������ġ�<br>3.�ӿڶ���ľ���һ�ֹ��ܣ��˹��ܿ��Ա�����ʵ�֣�implements����<br>���磺class  CC extends DD implements AA<br>4.ʵ�ֽӿڵ��࣬����Ҫ��дԭ�ӿ������еĳ��뷽��������ʵ��������δ��д���еĳ��󷽷����������Ϊһ��������<br>5.�����ʵ�ֶ���ӿڡ�—–java����ļ̳��ǵ��̳е�<br>6.�ӿ���ӿ�֮��Ҳ�Ǽ̳еĹ�ϵ���ӿڵļ̳��Ƕ�̳е�</p>
+<blockquote>
+<p>5,6����������Java�̳е��ص�<br>7.�ӿ�������ʵ����֮��Ҳ���ڶ�̬��<br>8.����ӿڱ��˼��</p>
+</blockquote>
+<h3 id="�ڲ���"><a href="#�ڲ���" class="headerlink" title="�ڲ���"></a>�ڲ���</h3><p>��ĵ������Ա���ڲ���<br>1.��������ڲ��ٶ����࣬����Ľ��ⲿ�࣬����Ľ��ڲ���<br>2.�ڲ���ķ��ࣺ��Ա�ڲ��ࣨ���������ڲ��ҷ����⣩���ֲ��ڲ��ࣨ��������ķ����ڣ�<br>3.��Ա�ڲ��ࣺ<br>    3.1���ⲿ���һ����Ա��1&gt;���������η���4������������˵�������������η�,public��Ĭ�ϣ�<br>                           2&gt;������static final����<br>                           3&gt;���Ե����ⲿ������Ժͷ���<br>    3.2��������ص㣺1&gt;������abstract����<br>                     2&gt;�����������ڲ��������ԡ�������������<br>4.�ֲ��ڲ��ࣺ</p>
+<p>�����ڲ��࣬�������㣺<br>1&gt;��δ�����Ա�ڲ���Ķ����磺����Bird���Dog��Ķ���<br>2&gt;������ֵ����ⲿ�����ڲ���ı����������Ǳ�������ʱ��<br>3&gt;�ֲ��ڲ����ʹ��    //��TestInnerClass1</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/15/Java-OOP-Eg/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -431,40 +1364,99 @@
       
         
           
-            <h2 id="面向对象基础"><a href="#面向对象基础" class="headerlink" title="面向对象基础"></a>面向对象基础</h2><h3 id="一、面向对象思想"><a href="#一、面向对象思想" class="headerlink" title="一、面向对象思想"></a>一、面向对象思想</h3><p> 1.面向对象编程的特征：封装性 继承性 多态性 （抽象性）<br> 2.类及类的构成成分：属性 方法 构造器 代码块 内部类<br> 3.创建的多个对象，彼此各自拥有一套类的属性。<br> 4.具体实现<br>   1）设计类，并设计类的成员（成员变量&amp;成员方法）<br>   2）通过类，来创建类的对象（或类的实例化）<br>   3）通过“对象.属性”或“对象.方法”调用，来完成相应的功能</p>
-<h3 id="二、类"><a href="#二、类" class="headerlink" title="二、类"></a>二、类</h3><h4 id="类的属性（成员变量）"><a href="#类的属性（成员变量）" class="headerlink" title="类的属性（成员变量）"></a>类的属性（成员变量）</h4><p>成员变量 vs 局部变量<br>相同点： 1.遵循变量声明的格式：修饰符  数据类型  变量名 =  初始化值<br>             2.都有作用域<br>不同点：<br>1.声明的位置不同：成员变量：声明在类里，方法外<br>                 局部变量：声明在方法内以及方法的形参部分，代码块内<br>2.成员变量的修饰符有四个：public private protected 缺省<br>  局部变量没有修饰符<br>3.初始化值：一定会有初始化值<br>成员变量：如果在声明的时候未显式地赋值，那么不同数据类型会有不同的默认初始化值<br>局部变量：一定要显式地赋值。（没有默认初始化值）<br>4.二者在内存中存放的位置不同：成员变量存在堆空间中，局部变量存在栈空间中</p>
-<h4 id="类的方法：提供某种功能的实现"><a href="#类的方法：提供某种功能的实现" class="headerlink" title="类的方法：提供某种功能的实现"></a>类的方法：提供某种功能的实现</h4><pre><code>1)实例：public void eat(){}
+            <h1 id="����������"><a href="#����������" class="headerlink" title="����������"></a>����������</h1><h2 id="һ���������˼��"><a href="#һ���������˼��" class="headerlink" title="һ���������˼��"></a>һ���������˼��</h2><p> 1.��������̵���������װ�� �̳��� ��̬�� �������ԣ�<br> 2.�༰��Ĺ��ɳɷ֣����� ���� ������ ����� �ڲ���<br> 3.�����Ķ�����󣬱˴˸���ӵ��һ��������ԡ�<br> 4.����ʵ��<br>   1������࣬�������ĳ�Ա����Ա����&amp;��Ա������<br>   2��ͨ���࣬��������Ķ��󣨻����ʵ������<br>   3��ͨ��������.���ԡ��򡰶���.���������ã��������Ӧ�Ĺ���</p>
+<h2 id="������"><a href="#������" class="headerlink" title="������"></a>������</h2><h3 id="������ԣ���Ա������"><a href="#������ԣ���Ա������" class="headerlink" title="������ԣ���Ա������"></a>������ԣ���Ա������</h3><p>��Ա���� vs �ֲ�����<br>��ͬ�㣺 1.��ѭ���������ĸ�ʽ�����η�  ��������  ������ =  ��ʼ��ֵ<br>             2.����������<br>��ͬ�㣺<br>1.������λ�ò�ͬ����Ա���������������������<br>                 �ֲ������������ڷ������Լ��������ββ��֣��������<br>2.��Ա���������η����ĸ���public private protected ȱʡ<br>  �ֲ�����û�����η�<br>3.��ʼ��ֵ��һ�����г�ʼ��ֵ<br>��Ա�����������������ʱ��δ��ʽ�ظ�ֵ����ô��ͬ�������ͻ��в�ͬ��Ĭ�ϳ�ʼ��ֵ<br>�ֲ�������һ��Ҫ��ʽ�ظ�ֵ����û��Ĭ�ϳ�ʼ��ֵ��<br>4.�������ڴ��д�ŵ�λ�ò�ͬ����Ա�������ڶѿռ��У��ֲ���������ջ�ռ���</p>
+<h3 id="��k������sĳ�ֹ��ܵ�ʵ��"><a href="#��k������sĳ�ֹ��ܵ�ʵ��" class="headerlink" title="��ķ������ṩĳ�ֹ��ܵ�ʵ��"></a>��ķ������ṩĳ�ֹ��ܵ�ʵ��</h3><pre><code>1)ʵ����public void eat(){}
         public String getName(){}
         public void setName(String n){}
-  格式： 权限修饰符 返回值类型（void：无返回值/具体的返回值，如：String） 方法名（形参）{ }
-2）关于返回值类型：void：表明此方法不需要返回值
-                   有返回值的方法：在方法的最后一定有 return + 返回值类型的变量
-3）方法内可以调用本类的其它方法和属性，但不能定义新的方法
-</code></pre><h4 id="构造器"><a href="#构造器" class="headerlink" title="构造器"></a>构造器</h4><p>构造器作用：（1）创建对象（2）初始化对象的属性<br>几点说明：<br>1&gt;设计类时，若不显示声明类的构造器的话，程序会默认提供一个空参的构造器<br>2&gt;一旦显示地定义类的构造器，那么默认的构造器就不再提供<br>3&gt;如何声明类的构造器。格式：权限修饰符 类名 (){  }<br>4&gt;类的多个构造器之间构成重载<br>5&gt;类对象的属性赋值的先后顺序：（1）属性的默认初始化（根据类型）<br>                            （2）属性的显示的初始化（在类创建属性时）<br>                            （3）通过构造器给属性初始化<br>                            （4）通过对象.方法的方式给属性赋值</p>
-<h4 id="方法的重载（overload"><a href="#方法的重载（overload" class="headerlink" title="方法的重载（overload)"></a>方法的重载（overload)</h4><p>要求： 1.同一类中 2.方法名必须相同 3.方法的参数列表不同（个数、类型）<br>补充： 方法的重载与方法的返回值类型没有关系！</p>
-<h4 id="方法的参数传递（重点、难点）"><a href="#方法的参数传递（重点、难点）" class="headerlink" title="方法的参数传递（重点、难点）"></a><strong>方法的参数传递（重点、难点）</strong></h4><p> 1.形参：方法声明时，方法小括号内的参数。<br>   实参：调用方法时，实际传入的参数的值<br> 2.规则：Java中的参数传递机制：值传递机制<br>   1&gt;形参是基本数据类型的：将实参的值传递给形参的基本数据类型的变量<br>   2&gt;形参时引用数据类型的：将实参的引用类型变量的值（对应的堆空间对象实体的首地址）传递给形参的引用类型变量<br>     所以通过此方法形参和实参指向的是同一对象</p>
-<h4 id="this"><a href="#this" class="headerlink" title="this"></a>this</h4><p>1.可以用来修饰属性、方法、构造器，通常用于形参与成员变量重名，不重名this省略<br>2.this理解为当前对象或当前正在创建的对象。比如this.name,this.show()；<br>3.可以在构造器中通过”this(形参)”的方式显示地调用本类中其他重载的指定的构造器。<br>  要求：1.在构造器内部必须声明在首行！<br>        2.若一个类中有N个构造器，则最多有N-1个构造器使用了this(形参)</p>
-<h4 id="package-and-import"><a href="#package-and-import" class="headerlink" title="package and import"></a>package and import</h4><h5 id="package-声明源文件所在的包，写在程序的第一行。"><a href="#package-声明源文件所在的包，写在程序的第一行。" class="headerlink" title="package:声明源文件所在的包，写在程序的第一行。"></a>package:声明源文件所在的包，写在程序的第一行。</h5><ul>
-<li>每“.”一次，表示一层文件目录。</li>
-<li>包名都要小写。<h5 id="import"><a href="#import" class="headerlink" title="import:"></a>import:</h5></li>
-<li>1)显式导入指定包下的类或接口</li>
-<li>2)写在包的声明和源文件之间</li>
-<li>3)如果需要引入多个类或接口，那么就并列写出</li>
-<li>4)如果导入的类是java.lang包下的，如：System String Math等，就不需要显式的声明。</li>
-<li>5)理解.<em>的概念。比如java.util.</em>;</li>
-<li>6)如何处理同名类的导入。如：在util包和sql包下同时存在Date类。显示地使用</li>
-<li>7)import static 表示导入指定类的static的属性或方法</li>
-<li>8)导入java.lang.*只能导入lang包下的所有类或接口，不能导入lang的子包下的类或接口<h5 id="常用包"><a href="#常用包" class="headerlink" title="常用包"></a>常用包</h5>1.java.lang—-包含一些Java语言的核心类，如String、Math、Integer、System和Thread，提供常用功能。<br>2.java.net—-包含执行与网络相关的操作的类和接口。<br>3.java.io   —-包含能提供多种输入/输出功能的类。<br>4.java.util—-包含一些实用工具类，如定义系统特性、接口的集合框架类、使用与日期日历相关的函数。<br>5.java.text—-包含了一些java格式化相关的类<br>6.java.sql—-包含了java进行JDBC数据库编程的相关类/接口<br>7.java.awt—-包含了构成抽象窗口工具集（abstract window toolkits）的多个类，这些类被用来构建和管理应用程序的图形用户界面(GUI)。<br>8.java.applet—-包含applet运行所需的一些类。<h4 id="类的初始化的内存解析"><a href="#类的初始化的内存解析" class="headerlink" title="类的初始化的内存解析"></a>类的初始化的内存解析</h4>内存划分的结构：<br>栈（stack)：局部变量、对象的引用名，数组的引用名<br>堆（heap)：new出来的“东西”（如：对象的实体，数组的实体）<br>方法区：含字符串常量<br>静态域：声明为static的变量<h3 id="三、面向对象的特性"><a href="#三、面向对象的特性" class="headerlink" title="三、面向对象的特性"></a>三、面向对象的特性</h3><h4 id="封装性"><a href="#封装性" class="headerlink" title="封装性"></a>封装性</h4>  问题：当创建了类的对象以后，如果直接通过“对象.属性”的方式对响应的对象属性赋值的话，可能会出现不满足实际情况的以外，我们考虑不让对象来直接作用属性，而是通过“对象.方法”的形式来控制对象对属性的访问。<br>  解决方法：（封装性的思想）①将类的属性私有化,②通过公共的方法（set&amp;get)来是实现调用</li>
+  ��ʽ�� Ȩ�����η� ����ֵ���ͣ�void���޷���ֵ/����ķ���ֵ���磺String�� ���������βΣ�{ }
+2�����ڷ���ֵ���ͣ�void�������˷�������Ҫ����ֵ
+                   �з���ֵ�ķ������ڷ��������һ���� return + ����ֵ���͵ı���
+3�������ڿ��Ե��ñ�����������������ԣ������ܶ����µķ���
+</code></pre><h3 id="������-1"><a href="#������-1" class="headerlink" title="������"></a>������</h3><p>���������ã���1����������2����ʼ�����������<br>����˵����<br>1&gt;�����ʱ������ʾ������Ĺ������Ļ��������Ĭ���ṩһ���ղεĹ�����<br>2&gt;һ����ʾ�ض�����Ĺ���������ôĬ�ϵĹ������Ͳ����ṩ<br>3&gt;���������Ĺ���������ʽ��Ȩ�����η� ���� (){  }<br>4&gt;��Ķ��������֮�乹������<br>5&gt;���������Ը�ֵ���Ⱥ�˳��<br>��1�����Ե�Ĭ�ϳ�ʼ�����������ͣ�<br>��2�����Ե���ʾ�ĳ�ʼ�������ഴ������ʱ����������ʼ�����˴������ṹ����˳��ִ�У�<br>��3��ͨ�������������Գ�ʼ��<br>��4��ͨ������.�����ķ�ʽ�����Ը�ֵ</p>
+<h3 id="���������أ�overload"><a href="#���������أ�overload" class="headerlink" title="���������أ�overload)"></a>���������أ�overload)</h3><p>Ҫ�� 1.ͬһ���� 2.������������ͬ 3.�����Ĳ����б�ͬ�����������ͣ�<br>���䣺 �����������뷽���ķ���ֵ����û�й�ϵ��</p>
+<h3 id="�����Ĳ������ݣ��ص㡢�ѵ㣩"><a href="#�����Ĳ������ݣ��ص㡢�ѵ㣩" class="headerlink" title="�����Ĳ������ݣ��ص㡢�ѵ㣩"></a><strong>�����Ĳ������ݣ��ص㡢�ѵ㣩</strong></h3><p> 1.�βΣ���������ʱ������С�����ڵĲ�����<br>    ʵ�Σ����÷���ʱ��ʵ�ʴ���Ĳ�����ֵ<br> 2.����Java�еĲ������ݻ��ƣ�ֵ���ݻ���<br>   1&gt;�β��ǻ����������͵ģ���ʵ�ε�ֵ���ݸ��βεĻ����������͵ı���<br>   2&gt;�β�ʱ�����������͵ģ���ʵ�ε��������ͱ�����ֵ����Ӧ�Ķѿռ����ʵ����׵�ַ�����ݸ��βε��������ͱ���<br>     ����ͨ���˷����βκ�ʵ��ָ�����ͬһ����</p>
+<h3 id="this"><a href="#this" class="headerlink" title="this"></a>this</h3><p>1.���������������ԡ���������������ͨ�������β����Ա��������������������this����ǿ�Ķ���<br>2.this���Ϊ��ǰ�����ǰ���ڴ����Ķ��󡣱���this.name,this.show()��<br>3.�����ڹ�������ͨ��”this(�β�)”�ķ�ʽ��ʾ�ص��ñ������������ص�ָ���Ĺ�������<br>  Ҫ��1.�ڹ������ڲ��������������У�<br>        2.��һ��������N�����������������N-1��������ʹ����this(�β�)</p>
+<h3 id="package-and-import"><a href="#package-and-import" class="headerlink" title="package and import"></a>package and import</h3><h4 id="package-����Դ�l����ڵI���д�ڳ���j�һ�С�"><a href="#package-����Դ�l����ڵI���д�ڳ���j�һ�С�" class="headerlink" title="package:����Դ�ļ����ڵİ���д�ڳ���ĵ�һ�С�"></a>package:����Դ�ļ����ڵİ���д�ڳ���ĵ�һ�С�</h4><ul>
+<li>ÿ��.��һ�Σ���ʾһ���ļ�Ŀ¼��</li>
+<li>������ҪСд��<h4 id="import"><a href="#import" class="headerlink" title="import:"></a>import:</h4></li>
+<li>1)��ʽ����ָ�����µ����ӿ�</li>
+<li>2)д�ڰ���������Դ�ļ�֮��</li>
+<li>3)�����Ҫ���������ӿڣ���ô�Ͳ���д��</li>
+<li>4)������������java.lang���µģ��磺System String Math�ȣ��Ͳ���Ҫ��ʽ��������</li>
+<li>5)���.<em>�ĸ������java.util.</em>;</li>
+<li>6)��δ���ͬ����ĵ��롣�磺��util����sql����ͬʱ����Date�ࡣ��ʾ��ʹ��</li>
+<li>7)import static ��ʾ����ָ�����static�����Ի򷽷�</li>
+<li>8)����java.lang.*ֻ�ܵ���lang���µ��������ӿڣ����ܵ���lang���Ӱ��µ����ӿ�<h4 id="���ð�"><a href="#���ð�" class="headerlink" title="���ð�"></a>���ð�</h4>1.java.lang—-����һЩJava���Եĺ����࣬��String��Math��Integer��System��Thread���ṩ���ù��ܡ�<br>2.java.net—-����ִ����������صĲ�������ͽӿڡ�<br>3.java.io   —-�������ṩ��������/������ܵ��ࡣ<br>4.java.util—-����һЩʵ�ù����࣬�綨��ϵͳ���ԡ��ӿڵļ��Ͽ���ࡢʹ��������������صĺ�����<br>5.java.text—-������һЩjava��ʽ����ص���<br>6.java.sql—-������java����JDBC���ݿ��̵������/�ӿ�<br>7.java.awt—-�����˹��ɳ��󴰿ڹ��߼���abstract window toolkits���Ķ���࣬��Щ�౻���������͹���Ӧ�ó����ͼ���û�����(GUI)��<br>8.java.applet—-����applet���������һЩ�ࡣ<h3 id="object��"><a href="#object��" class="headerlink" title="object��"></a>object��</h3>1.java.lang.Object�࣬��������ĸ����ࡣ<br>2.Object�����һ���ղι����� public Object(){}<br>3.���ڷ�����<h4 id="equals-Object-obj"><a href="#equals-Object-obj" class="headerlink" title="equals(Object obj)"></a>equals(Object obj)</h4>equals(): 1&gt;ֻ�ܴ����������ͱ���  2&gt;��Ȼ�Ƚϵ��������ñ����ĵ�ֵַ�Ƿ����</li>
 </ul>
-<p>权限修饰符：public protected 缺省 private</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">public boolean equals��Object obj)&#123;</span><br><span class="line">	return(this == obj);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>��String��  ��װ��  File��   Data��  ��д��equals()������ʵ�ʱȽϵ�������ʵ��������Ƿ���ͬ<br>���ԣ����������Ҫ�Ƚ��������������ֵ����ͬ������·���true������Ҫ��дObject���equals(Object obj)����<br>//==<br>//1.�����������ͣ����ݻ����������͵�ֵ�ж��Ƿ���ȡ���ȷ���true����֮����false<br>//ע�������������Ϳ��Բ�ͬ<br>//2.�����������ͣ��Ƚ��������ͱ����ĵ�ֵַ�Ƿ����</p>
+<h4 id="toString-Object-obj"><a href="#toString-Object-obj" class="headerlink" title="toString(Object obj)"></a>toString(Object obj)</h4><p><em>toString()������
+</em>java.lang.Object���toString()�����Ķ������£�<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">public String toString()&#123;</span><br><span class="line">    return getClass().getName() + &quot;@&quot; + Integer.toHexString(hashCode())��</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure></p>
+<p> 1.�����Ǵ�ӡһ�����������ʱ��ʵ����Ĭ�ϵ��õľ�����������toString()����<br> 2.�����Ǵ�ӡ�Ķ������ڵ���û����дObject�е�toString()����ʱ����ô���õľ���Object�е�toString()����<br>   ���ش˶������ڵ��༰��Ӧ�Ķѿռ����ʵ����׵�ֵַ<br> 3.ͨ����������д������������Ե���Ϣ����<br> 4.��String�ࡢ��װ�ࡢFile�ࡢDate��ȣ��Ѿ�ʵ����Object���е�toString()��������д�����ص���ʵ������</p>
+<h4 id="wrapper��"><a href="#wrapper��" class="headerlink" title="wrapper��"></a>wrapper��</h4><table>
+<thead>
+<tr>
+<th>������������</th>
+<th>��װ��</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>boolean</td>
+<td>Boolean</td>
+<td></td>
+</tr>
+<tr>
+<td>byte</td>
+<td>Byte</td>
+<td></td>
+</tr>
+<tr>
+<td>short</td>
+<td>Short</td>
+<td></td>
+</tr>
+<tr>
+<td>int</td>
+<td>Integer</td>
+<td></td>
+</tr>
+<tr>
+<td>long</td>
+<td>Long</td>
+<td></td>
+</tr>
+<tr>
+<td>char</td>
+<td>Character</td>
+<td></td>
+</tr>
+<tr>
+<td>float</td>
+<td>Float</td>
+<td></td>
+</tr>
+<tr>
+<td>double</td>
+<td>Double</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>��ϸ��java_abc.src.adclass.TestWrapper</strong><br>���װ棺<br>//�����������͡���װ����String��֮���ת��<br>1&gt;�����������͡���װ��—-&gt;String�ࣺ����String��ľ�̬�����ص�valueOf(Xxxx x)����<br>2&gt;String��—-&gt;�����������͡���װ�ࣺ���ð�װ���parseXxxx(String str)����<br><em>��String֮��ת����ת��˭������˭�ķ���</em><br>//���������������װ��֮���ת��<br>1&gt;������������—-&gt;��Ӧ�İ�װ�࣬���ð�װ��Ĺ�����<br>2&gt;��װ��—–&gt;�����������ͣ����ð�װ���Xxx��xxxValue()����<br>�ϼ򵥵ķ������Բ����Զ�װ�����</p>
+<h3 id="��ĳ�ʼ�����ڴ����"><a href="#��ĳ�ʼ�����ڴ����" class="headerlink" title="��ĳ�ʼ�����ڴ����"></a>��ĳ�ʼ�����ڴ����</h3><p>  �ڴ滮�ֵĽṹ��<br>  ջ��stack)���ֲ�������������������������������<br>  �ѣ�heap)��new�����ġ����������磺�����ʵ�壬�����ʵ�壩<br>  �����������ַ�������<br>  ��̬������Ϊstatic�ı���</p>
+<h2 id="����������������"><a href="#����������������" class="headerlink" title="����������������"></a>����������������</h2><h3 id="��װ��"><a href="#��װ��" class="headerlink" title="��װ��"></a>��װ��</h3><pre><code>���⣺����������Ķ����Ժ����ֱ��ͨ��������.���ԡ��ķ�ʽ����Ӧ�Ķ������Ը�ֵ�Ļ������ܻ���ֲ�����ʵ����������⣬���ǿ��ǲ��ö�����ֱ���������ԣ�����ͨ��������.����������ʽ�����ƶ�������Եķ��ʡ�
+�������������װ�Ե�˼�룩�ٽ��������˽�л�,��ͨ�������ķ�����set&amp;get)����ʵ�ֵ���
+</code></pre><p>Ȩ�����η���public protected ȱʡ private</p>
 <table>
 <thead>
 <tr>
-<th>修饰符</th>
-<th>类内部</th>
-<th>同一个包</th>
-<th>子类</th>
-<th>任何地方</th>
+<th>���η�</th>
+<th>���ڲ�</th>
+<th>ͬһ����</th>
+<th>����</th>
+<th>�κεط�</th>
 </tr>
 </thead>
 <tbody>
@@ -484,7 +1476,7 @@
 <td></td>
 </tr>
 <tr>
-<td>缺省</td>
+<td>ȱʡ</td>
 <td>Yes</td>
 <td>Yes</td>
 <td></td>
@@ -496,7 +1488,14 @@
 </tr>
 </tbody>
 </table>
-<p>四种权限均可修饰属性、方法、构造器；对于类来说，只有pulic和缺省</p>
+<p>����Ȩ�޾����������ԡ�����������������������˵��ֻ��pulic��ȱʡ</p>
+<h3 id="�̳���"><a href="#�̳���" class="headerlink" title="�̳���"></a>�̳���</h3><p>1.ͨ����class A extends B��ʵ����ļ̳�<br>     ���ࣺA      ���ࣨsuperclass����B<br>2.����̳и���󣬸��������������ԡ����������඼���Եõ���<br>ע��<br>  1�����ڸ�������private�����ԣ�������Ȼ�ܻ�ȡ�����������ڷ�װ�Ժ�Ȩ�޵����ⲻ��ʹ��<br>  2���������ͨ���̳У���ȡ����Ľṹ֮�⣬�����Զ����Լ����еĳɷ֡�<br>  3�������ǶԸ��๦�ܵġ���չ������ȷ���಻�Ǹ�����Ӽ���<br>3.Java����ļ̳���ֻ֧�ֵ��̳С���һ����ֻ�ܼ̳�һ�����ࡣ��һ���������ӵ�ж�����ࡣ<br>4.���ุ������Եĸ����������Ȼ�����ٴα��̳У�����������һ�Ը�������Ĺ�ϵ��</p>
+<h4 id="��������д"><a href="#��������д" class="headerlink" title="��������д"></a>��������д</h4><p>1.ǰ�᣺������̳и���<br>2.����̳и��������ķ��������಻���ã���ô������ԶԸ���ķ�����д(override/overwrite)�����ǡ�<br>3.����<br>  1��Ҫ�����෽���� ������ֵ���� �������������б� ���븸�෽��һ����<br>  2�����෽�������η�Ȩ�޲���С�ڸ���ķ��������ڸ���private�ķ�������   ���൱�����¶��塣<br>  3�����෽�����쳣����ô���෽���׵��쳣���Ͳ��ܴ��ڸ��ࡣ<br>  4���Ӹ���ķ�������ͬΪstatic��ͬΪ��static�ġ�</p>
+<h4 id="super"><a href="#super" class="headerlink" title="super"></a>super</h4><p>super:���������������ԡ�������������<br>1���������븸������ͬ��������ʱ������ͨ����super.���ԡ���ʾ�ص��ø��������������ԡ�������������ͬ�������ԡ�this.���ԡ�<br>2����������д����ķ����Ժ�����������������ʾ�ص��ø���ı���д�ķ��������á�super.������<br>3��super���ι�������ͨ����������ʹ�á�super(�β��б�)������ʾ�ص��ø�����ָ���Ĺ�����<br>    &gt;�ڹ������ڲ�����super(�β��б�)���������������У�<br>    &gt;�ڹ������ڲ���ͨ��this��super��������������ʱ����this(�β��б�)����super(�β��б�)��ֻ�ܳ���һ����<br>������ֻ��this�����൱���ù�������Ĭ�ϵ��ø���ղι��������ٵ���this��ָ��Ĺ�������<br>    &gt;���������в���ʾ�ص��á�this(�β��б�)����super(�β��б�)��Ĭ�ϵص��ø���Ŀղι�����<br>    ���飺���һ�����ǣ�����Ҫ�ṩһ���ղεĹ�����������Ĭ�ϵ��ø���ղι�����ʱ�ᱨ��</p>
+<h4 id="����ʵ������o����"><a href="#����ʵ������o����" class="headerlink" title="����ʵ������ȫ����"></a>����ʵ������ȫ����</h4><p>���¾��Ǵ����಻�ϵص��ø��ࡢ����ĸ���֪�����õ�Object�࣬Ȼ������������õ����Ժͷ���</p>
+<h3 id="��̬��"><a href="#��̬��" class="headerlink" title="��̬��"></a>��̬��</h3><p>1.��̬��ָ����ʲô��<br>��̬�Կ������Ϊһ������Ķ��ֱ�����̬<br>    1����������������д  2���������Ķ�̬��<br>2.�������Ķ�̬��ʹ�õ�ǰ�᣺1&gt;Ҫ����ļ̳� 2&gt;Ҫ������Ը��෽������д<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">//�������Ķ�̬�ԣ����������ָ��������󣨻���˵��������ʵ�帳����������ã�</span><br><span class="line">Person p1 = new Man();  //����ת��</span><br><span class="line">//���ⷽ�����ã�ͨ�����������ָ������Ķ���ʵ�壬�����÷���ʱ��ʵ��ִ�е���������д����ķ�����</span><br><span class="line">p1.eat();</span><br><span class="line">p1.walk();</span><br></pre></td></tr></table></figure></p>
+<p>3.�����Ϊ����״̬������״̬<br>    ���ڶද̬����˵������ʱ��������ߡ����������ñ������Ϊ���������<br>                      ����ʱ�������ұߡ�����ע�������Ķ����ʵ�壺����Ķ�����ôִ�еķ�������������д�ġ�</p>
+<p>��̬�ԣ���ҪӦ�����࣬����Ҫ����Ĳ���Ϊ�����ʵ��ʱ��Ҳ���Դ�������ģ��������Բ���д�������<br>����package basic.adclass.testDuotai;�е�TestAnimal)<br>4.�������Ķ�̬�Բ������������ԡ� ��Ϊ�������������Զ�����ص��ڴ��С�<br>5.��������ת�ͣ�<br>1&gt;����ת�ͣ�ʹ��ǿת����()<br>2&gt;Ϊ�˱�֤����ClassCastException�����������ת��ǰ�������жϣ�instanceof<br>��ʽ������a instanceof ��A �� �ж϶���a�Ƿ�����A��һ��ʵ�����ǵĻ�����true�����򷵻�false<br>//��a��A���ʵ������ôaҲһ����A��ĸ����ʵ��<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">if(p1 instanceof Woman)&#123;</span><br><span class="line">    Woman w2 = (Woman) p1;</span><br><span class="line">    w2.shooping();</span><br><span class="line">&#125;</span><br><span class="line">if(p1 instanceof Man)&#123;</span><br><span class="line">    Man m2 = (Man) p1;</span><br><span class="line">    m2.dance();</span><br><span class="line">&#125;</span><br><span class="line">if(p1 instanceof Person)&#123;</span><br><span class="line">    System.out.println(&quot;Hello&quot;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 
           
         
@@ -658,694 +1657,13 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/19/tips/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="HongbinW">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/10/19/tips/" itemprop="url">tips</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-19T13:16:34+08:00">
-                2018-10-19
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>pip 换源<br>pip换源内容。关掉之前没下载好的，重新开一个终端，再下载，就能用清华源了。<br>[global]<br>index-url =  = <a href="https://pypi.tuna.tsinghua.edu.cn/simple" target="_blank" rel="noopener">https://pypi.tuna.tsinghua.edu.cn/simple</a></p>
-<p><img src="./pip换源.png" alt=""></p>
-<p>win安装pytorch<br><a href="https://blog.csdn.net/xiangxianghehe/article/details/73500031" target="_blank" rel="noopener">https://blog.csdn.net/xiangxianghehe/article/details/73500031</a></p>
-<p>校园邮箱拦截队列<br><a href="http://tieba.baidu.com/p/3743763837" target="_blank" rel="noopener">http://tieba.baidu.com/p/3743763837</a></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/17/python-库/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="HongbinW">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/10/17/python-库/" itemprop="url">python 库</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-17T21:23:28+08:00">
-                2018-10-17
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>数组：Numpy<br>模块内相关工具<a href="https://www.jianshu.com/p/83c8ef18a1e8" target="_blank" rel="noopener">https://www.jianshu.com/p/83c8ef18a1e8</a></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/15/大话数据结构-02算法/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="HongbinW">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/10/15/大话数据结构-02算法/" itemprop="url">大话数据结构--02算法</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-15T15:15:52+08:00">
-                2018-10-15
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="算法相关概念"><a href="#算法相关概念" class="headerlink" title="算法相关概念"></a>算法相关概念</h1><h2 id="1-算法的概念"><a href="#1-算法的概念" class="headerlink" title="1.算法的概念"></a>1.算法的概念</h2><pre><code>算法是解决特定问题求解步骤的描述，在计算机中表现为指令的有限序列，并且每条指令表示一个或多个操作。
-</code></pre><h2 id="2-算法特性"><a href="#2-算法特性" class="headerlink" title="2.算法特性"></a>2.算法特性</h2><pre><code>输入、输出、有穷性、确定性和可行性
-</code></pre><h2 id="3-算法的设计要求"><a href="#3-算法的设计要求" class="headerlink" title="3.算法的设计要求"></a>3.算法的设计要求</h2><pre><code>正确性、可读性、健壮性、时间效率高和存储量低
-</code></pre><h2 id="4-一个高级程序语言编写的程序在计算机上运行时所小号的时间取决于下列因素："><a href="#4-一个高级程序语言编写的程序在计算机上运行时所小号的时间取决于下列因素：" class="headerlink" title="4.一个高级程序语言编写的程序在计算机上运行时所小号的时间取决于下列因素："></a>4.一个高级程序语言编写的程序在计算机上运行时所小号的时间取决于下列因素：</h2><pre><code>算法采用的策略、方法    ————算法的好坏
-编译产生的额代码质量    ————软件支持
-问题的输入规模        ————输入量的多少
-机器执行指令的速度    ————硬件性能
-</code></pre><h2 id="5-算法的时间复杂度"><a href="#5-算法的时间复杂度" class="headerlink" title="5.算法的时间复杂度"></a>5.算法的时间复杂度</h2><pre><code>算法的时间复杂度，也就是算法的时间量度，记做：T(n)=O(f(n))。它表示随问题规模n的增大，算法执行时间的增长率和f(n)的增长率相同，称算法的渐近时间复杂度，简称时间复杂度。其中T（n）是关于问题规模n的函数，f(n)是问题规模n的某个函数。
-推导大O阶：
-1.用常数1取代运行实践中的所有加法常数
-2.在修改后的运行次数函数中，只保留最高阶项
-3.如果最高阶存在且不是1，则去除这个项相乘的常数。
-得到的结果结果就是大O阶。
-</code></pre><p><em>其实主要看执行次数，比如执行总次数 = 2n^2 + 3n + 1，那么就是O(n2)</em></p>
-<h3 id="5-1常数阶O-1"><a href="#5-1常数阶O-1" class="headerlink" title="5.1常数阶O(1)"></a>5.1常数阶O(1)</h3><pre><code>指令都是单步执行的，即使使用很多次，但执行时间恒定，比如说像分支结构。
-</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">int sum = 0,n = 100;</span><br><span class="line">sum = (1+n)*n/2;</span><br><span class="line">pringt(&quot;%d&quot;,sum);</span><br></pre></td></tr></table></figure>
-<h3 id="5-2线性阶O-n"><a href="#5-2线性阶O-n" class="headerlink" title="5.2线性阶O(n)"></a>5.2线性阶O(n)</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">int i,sum = 0,n = 100;</span><br><span class="line">for (i = 1;i &lt; n; i++)</span><br><span class="line">&#123;</span><br><span class="line">	sum = sum + i;</span><br><span class="line">&#125;</span><br><span class="line">printf(&quot;%d&quot;,sum);</span><br></pre></td></tr></table></figure>
-<h3 id="5-3对数阶O-logn"><a href="#5-3对数阶O-logn" class="headerlink" title="5.3对数阶O(logn)"></a>5.3对数阶O(logn)</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">int count = 1;</span><br><span class="line">while(count &lt; n)</span><br><span class="line">&#123;</span><br><span class="line">	count = count * 2;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><strong><em>由此更能体现出时间复杂度，主要体现的是执行的次数</em></strong></p>
-<h3 id="5-4平方阶O-n2"><a href="#5-4平方阶O-n2" class="headerlink" title="5.4平方阶O(n2)"></a>5.4平方阶O(n2)</h3><p>通常指循环嵌套<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">int i ,j;</span><br><span class="line">for（i = 0;i &lt; m;i++)</span><br><span class="line">&#123;</span><br><span class="line">	for(j = 0;j &lt; n;j++)</span><br><span class="line">	&#123;</span><br><span class="line">	/*时间复杂度为O(1)的程序步骤序列*/</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>那它的时间复杂度就是O(m*n)，此外对于调用函数，也是要统一计算所需要执行的次数，再套用推导大O阶的方法。</p>
-<h2 id="6-常见的时间复杂度"><a href="#6-常见的时间复杂度" class="headerlink" title="6.常见的时间复杂度"></a>6.常见的时间复杂度</h2><table>
-<thead>
-<tr>
-<th>执行次数函数</th>
-<th>阶</th>
-<th>备注</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>12</td>
-<td>O(1)</td>
-<td>常数阶</td>
-</tr>
-<tr>
-<td>2n+3</td>
-<td>O(n)</td>
-<td>线性阶</td>
-</tr>
-<tr>
-<td>3n2+2n+1</td>
-<td>O(n2)</td>
-<td>平方阶</td>
-</tr>
-<tr>
-<td>5log2n+20</td>
-<td>O(logn)</td>
-<td>对数阶</td>
-</tr>
-<tr>
-<td>2n+3nlog2n+19</td>
-<td>O(nlogn)</td>
-<td>nlogn阶</td>
-</tr>
-<tr>
-<td>6n3+2n2+3n+4</td>
-<td>O(n3)</td>
-<td>立方阶</td>
-</tr>
-<tr>
-<td>2n</td>
-<td>O(2n)</td>
-<td>指数阶</td>
-</tr>
-</tbody>
-</table>
-<p>时间复杂度排列：<br>O(1)&lt;O(logn)&lt;O(n)&lt;O(nlogn)&lt;O(n^2)&lt;O(n^3)&lt;O(2^n)&lt;O(n!)&lt;O(n^n) </p>
-<h2 id="7-算法的空间复杂度"><a href="#7-算法的空间复杂度" class="headerlink" title="7.算法的空间复杂度"></a>7.算法的空间复杂度</h2><p>S(n)=O(f(n))，其中n为问题的规模，f(n)为语句关于n所占存储空间的函数。</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/10/how-to-build-github-hexo/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="HongbinW">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/10/10/how-to-build-github-hexo/" itemprop="url">how to build github&hexo</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-10T15:23:24+08:00">
-                2018-10-10
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>下载安装<br><a href="https://blog.csdn.net/weixin_39879178/article/details/80319392" target="_blank" rel="noopener">https://blog.csdn.net/weixin_39879178/article/details/80319392</a></p>
-<p>Hexo配置以及Hext主题配置（比较良心）<br><a href="https://blog.csdn.net/qq_37210523/article/details/80909983" target="_blank" rel="noopener">https://blog.csdn.net/qq_37210523/article/details/80909983</a></p>
-<p>一些排版等的说明<br><a href="https://www.jianshu.com/p/56d99a3049a5" target="_blank" rel="noopener">https://www.jianshu.com/p/56d99a3049a5</a></p>
-<p>makedown语法<br><a href="https://www.jianshu.com/p/191d1e21f7ed" target="_blank" rel="noopener">https://www.jianshu.com/p/191d1e21f7ed</a><br><a href="https://www.jianshu.com/p/b03a8d7b1719" target="_blank" rel="noopener">https://www.jianshu.com/p/b03a8d7b1719</a></p>
-<p>部分操作可参考<br><a href="https://www.cnblogs.com/liuxianan/p/build-blog-website-by-hexo-github.html#写博客" target="_blank" rel="noopener">https://www.cnblogs.com/liuxianan/p/build-blog-website-by-hexo-github.html#写博客</a></p>
-<p>常用命令<br><a href="https://blog.csdn.net/qq_26975307/article/details/62447489" target="_blank" rel="noopener">https://blog.csdn.net/qq_26975307/article/details/62447489</a></p>
-<p>换电脑后，如何使用Hexo继续写博客<br><a href="https://www.cnblogs.com/study-everyday/p/8902136.html" target="_blank" rel="noopener">https://www.cnblogs.com/study-everyday/p/8902136.html</a></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/09/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="HongbinW">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/10/09/hello-world/" itemprop="url">Hello World</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-09T11:36:18+08:00">
-                2018-10-09
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+  </nav>
+
 
 
           </div>
@@ -1389,7 +1707,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-count">15</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1439,7 +1757,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>

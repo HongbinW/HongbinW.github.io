@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="description" content="一、对象的存储①数组（基本数据类型 &amp;amp; 引用数据类型）  ②集合（引用数据类型）数组弊端：①一旦创建，其长度不可变。②实际存储量不可直接知二、集合框架 —–Collection接口        —-Set：元素无序，不可重复的集合（类似集合）                —-HashSet（主要的实现类）    —-LinkedHashSet（是HashSet一个子类，遍历时为“顺序”">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://yoursite.com/2018/10/09/hello-world/index.html">
+<meta property="og:title" content="Collection">
+<meta property="og:url" content="http://yoursite.com/2019/01/16/Collection/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta property="og:description" content="一、对象的存储①数组（基本数据类型 &amp;amp; 引用数据类型）  ②集合（引用数据类型）数组弊端：①一旦创建，其长度不可变。②实际存储量不可直接知二、集合框架 —–Collection接口        —-Set：元素无序，不可重复的集合（类似集合）                —-HashSet（主要的实现类）    —-LinkedHashSet（是HashSet一个子类，遍历时为“顺序”">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-10-09T03:36:18.296Z">
+<meta property="og:updated_time" content="2019-01-22T10:18:03.568Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="twitter:title" content="Collection">
+<meta name="twitter:description" content="一、对象的存储①数组（基本数据类型 &amp;amp; 引用数据类型）  ②集合（引用数据类型）数组弊端：①一旦创建，其长度不可变。②实际存储量不可直接知二、集合框架 —–Collection接口        —-Set：元素无序，不可重复的集合（类似集合）                —-HashSet（主要的实现类）    —-LinkedHashSet（是HashSet一个子类，遍历时为“顺序”">
 
 
 
@@ -119,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/10/09/hello-world/"/>
+  <link rel="canonical" href="http://yoursite.com/2019/01/16/Collection/"/>
 
 
 
 
 
-  <title>Hello World | Hexo</title>
+  <title>Collection | Hexo</title>
   
 
 
@@ -242,7 +242,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/09/hello-world/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/16/Collection/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="HongbinW">
@@ -259,7 +259,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Hello World</h1>
+          <h1 class="post-title" itemprop="name headline">Collection</h1>
         
 
         <div class="post-meta">
@@ -271,8 +271,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-09T11:36:18+08:00">
-                2018-10-09
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-16T13:53:41+08:00">
+                2019-01-16
               </time>
             
 
@@ -309,15 +309,18 @@
       
 
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+        <p>一、对象的存储<br>①数组（基本数据类型 &amp; 引用数据类型）  ②集合（引用数据类型）<br>数组弊端：①一旦创建，其长度不可变。②实际存储量不可直接知<br>二、集合框架</p>
+<p>—–Collection接口<br>        —-Set：元素无序，不可重复的集合（类似集合）<br>                —-HashSet（主要的实现类）<br>    —-LinkedHashSet（是HashSet一个子类，遍历时为“顺序”）<br>    —-TreeSet(可以按照添加进元素的指定属性进行排序）<br>        —-List:元素有序，可重复的集合（“动态”数组）<br>                —-ArrayList（主要的实现类）<br>             —-LinkedList(链表实现，用于频繁的插入删除操作)<br>            —-Vector(古老的实现类、线程安全的)<br>—–Map接口：具有映射关系“key-value对”的集合（类似函数）<br>                —-HashMap（主要实现类）<br>    —-LinkedHashMap（HashMap子类，遍历时为“顺序”）<br>    —-TreeMap（需要按照key所在类的指定属性进行排序，要求key是同                类的)<br>    —-Hashtable:古老实现类，线程安全，不可添加Null键<br>    —-子类:Properties：用来处理属性文件<br>—–Iterator接口：用来遍历集合Collection元素，Map有自己遍历的方法</p>
+<p>Collections工具类，操作Collection及Map的工具类，大部分为static的方法。</p>
+<p>说明：<br>1&gt;.Collection方法：<br>①<strong>add(Object obj)</strong>,addAll(Collection c1),<strong>size()</strong>,clear(),isEmpty()<br>②<strong>remove(Object obj)</strong>,removeAll(Collection c1),retainAll(Collection c1),equals(Object obj),set(int Index,Object obj),contains(Object obj),containsAll(Collection c1),hashCode()<br>（该组都与equals有关）<br>③<strong>iterator()</strong>,toArray()</p>
+<p>2&gt;.List增加的方法：<br>remove(int index),set(int index,Object obj),get(int index),add(int index, Object obj)</p>
+<p>添加进List集合的元素（或对象）所在的类一定要重写equals()方法</p>
+<p>3&gt;.Set接口使用的方法基本都是Collection接口定义的<br>1.添加进Set集合中的元素所在类一定要重写equals()和hashCode()，且要求保持一致<br>2.无序性，无序性不等于随机性.无序性指的是元素在低层存储的位置是无序的<br>3.不可重复性：向Set中添加进相同元素（内容）时，后面的不能添加进去(size()是不变的）</p>
+<p>4&gt;.TreeSet<br>1.要求添加进集合的元素是同一类的<br>2.自然排序 VS 定制排序<br>①自然排序：要求自定义类实现java.lang.Comparable接口并重写其compareTo(Object obj)的抽象方法在此方法中，指明按照自定义类的哪个属性进行排序<br>②定制排序：创建实现Comparator接口的实现类的对象，在实现类中重写compare()方法，在compare()方法中指明按照元素哪个属性进行排序，将此Comparator接口的实现类的对象作为形参传递给TreeSet的构造器中</p>
+<blockquote>
+<p>要求重写的compareTo(),compare()方法与equals(),hashCode()方法保持一致</p>
+</blockquote>
+<p>5&gt;.Map接口<br>常用方法：添加、修改put(Object key,Object value),删除remove(Object key),获取get(Object key),遍历用size(),keySet(),values(),entrySet()<br>1.key值是不可重复的,相当于Set来存，value可以重复，使用Collection来存。<br>  一个key-value对构成一个entry(Map.Entry),entry用Set来存放<br>2.TreeMap类似于TreeSet</p>
 
       
     </div>
@@ -342,14 +345,18 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2019/01/13/OOP总结/" rel="next" title="OOP总结">
+                <i class="fa fa-chevron-left"></i> OOP总结
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/10/10/how-to-build-github-hexo/" rel="prev" title="how to build github&hexo">
-                how to build github&hexo <i class="fa fa-chevron-right"></i>
+              <a href="/2019/01/17/Generic/" rel="prev" title="Generic">
+                Generic <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -402,17 +409,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -463,22 +461,6 @@
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick-Start"><span class="nav-number">1.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-a-new-post"><span class="nav-number">1.1.</span> <span class="nav-text">Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Run-server"><span class="nav-number">1.2.</span> <span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate-static-files"><span class="nav-number">1.3.</span> <span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy-to-remote-sites"><span class="nav-number">1.4.</span> <span class="nav-text">Deploy to remote sites</span></a></li></ol></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       

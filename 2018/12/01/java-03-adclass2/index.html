@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="java," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="statictatic,��̬�ģ����������������ԡ�����������飨��ʼ���飩���ڲ��� static�������ԣ����������1.���ഴ�������ж��󣬶�������һ������2.������һ������Դ����Խ����޸ģ��ᵼ����������Դ����Ե�һ������  VS  ʵ����������static������">
+<meta name="keywords" content="java">
+<meta property="og:type" content="article">
+<meta property="og:title" content="java-03-adclass2">
+<meta property="og:url" content="http://yoursite.com/2018/12/01/java-03-adclass2/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="statictatic,��̬�ģ����������������ԡ�����������飨��ʼ���飩���ڲ��� static�������ԣ����������1.���ഴ�������ж��󣬶�������һ������2.������һ������Դ����Խ����޸ģ��ᵼ����������Դ����Ե�һ������  VS  ʵ����������static������">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-12-24T03:00:21.029Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="java-03-adclass2">
+<meta name="twitter:description" content="statictatic,��̬�ģ����������������ԡ�����������飨��ʼ���飩���ڲ��� static�������ԣ����������1.���ഴ�������ж��󣬶�������һ������2.������һ������Դ����Խ����޸ģ��ᵼ����������Դ����Ե�һ������  VS  ʵ����������static������">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/12/01/java-03-adclass2/"/>
+
+
+
+
+
+  <title>java-03-adclass2 | Hexo</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Hexo</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/01/java-03-adclass2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="HongbinW">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">java-03-adclass2</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-01T22:01:00+08:00">
+                2018-12-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="static"><a href="#static" class="headerlink" title="static"></a>static</h3><p>tatic,��̬�ģ����������������ԡ�����������飨��ʼ���飩���ڲ���</p>
+<p>static�������ԣ����������<br>1.���ഴ�������ж��󣬶�������һ������<br>2.������һ������Դ����Խ����޸ģ��ᵼ����������Դ����Ե�һ������  VS  ʵ����������static�����������������ӵ��һ�׸������޸�ʱ������������Ӱ��<br>3.�����������ļ��ض����صģ���ʹû��ʵ��������Ҳ���ڴ�ľ�̬���У����Ҷ�һ��<br>4.��̬��������ֱ��ͨ������.�����������ʽ������<br>5.������ļ��������ڶ���ģ����Ե����˶����Ժ󣬿��ԡ�����.������������ã����ǡ���.ʵ���������ǲ��е�<br>6.����������ھ�̬���С�</p>
+<p>static���η������෽������<br>1.������ļ��ض����أ����ڴ���Ҳ�Ƕ�һ��<br>2.����ֱ��ͨ������.�෽�����ķ�ʽ������<br>3.�ھ�̬�����ڲ������Ե��þ�̬���Ի򷽷��������ܵ��÷Ǿ�̬�����Ի򷽷�����֮���Ǿ�̬����ʱ���Ե��þ�̬�����Ի򷽷�����Ҫ��Ϊ���ش������⣩<br>    &gt;��̬�����в�����this��super�ؼ��֣���Ϊthis��superָ���Ƕ���<br>ע����̬�Ľṹ��static�����ԡ�����������顢�ڲ��ࣩ����������Ҫ���ڷǾ�̬�ṹ��ͬʱ������Ҳ���ڷǾ�̬�ṹ</p>
+<h4 id="����gʽ"><a href="#����gʽ" class="headerlink" title="����ģʽ"></a>����ģʽ</h4><p>������⣺ʹ��һ����ֻ�ܹ�����һ������<br>ʵ�ַ�ʽ������ʽ &amp; ����ʽ<br><strong>����ʽ</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">class Singleton&#123;</span><br><span class="line">    //1.˽�л���������ʹ��������ⲿ���ܹ����ô˹�����</span><br><span class="line">    private Singleton()&#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    //2.������ڲ�����һ�����ʵ��</span><br><span class="line">    private static Singleton instance = new Singleton();</span><br><span class="line">    //3.˽�л��˶���ͨ�������ķ��������á�</span><br><span class="line">    //4.�˹����ķ���ֻ��ͨ���������ã���������Ϊstatic��ͬʱ���ʵ��Ҳ����Ϊstatic������</span><br><span class="line">    public static Singleton getInstance()&#123;</span><br><span class="line">        return instance;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><strong>����ʽ</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">class Singleton1&#123;</span><br><span class="line">    private Singleton1()&#123;</span><br><span class="line">    &#125;</span><br><span class="line">    private static Singleton1 instace = null;</span><br><span class="line">    public static Singleton1 getInstace()&#123;</span><br><span class="line">        if(instace == null)	//���ܴ����̰߳�ȫ���⣡</span><br><span class="line">            instace = new Singleton1(); //�õ�ʱ���ٴ���</span><br><span class="line">        return instace;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="main-����"><a href="#main-����" class="headerlink" title="main()����"></a>main()����</h3><p>1.main()��һ��������Ҳ���Ա����ã���ͬʱҲ�����������ǳ�������<br>2.��main���������β�<br> Idea:Run-Edit Configuration-Program arguments<br> CMD: java file.java<br>      javac file “abc” “def” “cjy”</p>
+<h3 id="�����"><a href="#�����" class="headerlink" title="�����"></a>�����</h3><p>��ĵ��ĸ���Ա<br>���ã���ʼ���������<br>1.�������������εĻ�����ôֻ��ʹ��static<br>2.���ࣺ<br>    ��̬����飺<br>    1.������������<br>    2.������ļ��ض����أ�����ֻ������һ�Σ������ٴ�������Ȳ������������ٴμ��أ�<br>    3.�����̬�����֮�䰴��˳��ṹִ��<br>    4.��̬������ִ��Ҫ���ڷǾ�̬������ִ��<br>    5.��̬�Ĵ������ֻ��ִ�о�̬�Ľṹ�������ԡ��෽����</p>
+<pre><code>�Ǿ�̬����飺
+1&gt;���Զ�������ԣ���̬&amp;�Ǿ�̬�����г�ʼ������,ͬʱҲ���Ե��ñ��������ķ���
+2&gt;���������������
+3&gt;һ�����У������ж���Ǿ�̬����飬�������鰴��˳��ṹִ��
+4&gt;ÿ����һ����Ķ��󣬷Ǿ�̬�����ͼ���һ��
+5&gt;�Ǿ�̬������ִ��Ҫ���ڹ�����
+</code></pre><p>�������Ը�ֵ�Ĳ�����1&gt;Ĭ�ϵĳ�ʼ��<br>2&gt;��ʾ�ĳ�ʼ����������ʼ�����˴������ṹ����˳��ִ�У�<br>3&gt;�������и�ֵ<br>—————-�����Ƕ�������Գ�ʼ������—————<br>4&gt;ͨ�������Զ�������Խ����޸�</p>
+<p>ע�����漰���̳У���˳��Ϊ�Ӹ���—&gt;���࣬�Ⱦ�̬—-&gt;�Ǿ�̬—-&gt;������<br>Eg��testdaimakuai.TestLeaf</p>
+<h3 id="final�ؼ���"><a href="#final�ؼ���" class="headerlink" title="final�ؼ���"></a>final�ؼ���</h3><p>final:���յģ������������ࡢ���ԡ�����</p>
+<p>1.final�����ࣺ�����Ͳ��ܱ��̳У��磺String�ࡢStringBuffer�ࡢSystem��<br>2.final���η�������������Ͳ��ܱ���д���磺Object���getClass()����<br>3.final�������ԣ�������Ծ���һ��������һ����ʼ���󣬲����ٱ���ֵϰ���ϣ������ô�д�ַ���ʾ<br>    �˳�������ʹ��Ĭ�ϳ�ʼ����������ʾ�ظ�ֵ������顢��������Ҳ����˵�ڶ������֮ǰ����ֵ��ϣ����Բ���ͨ��������ֵ��<br>    ������static final���Σ�ȫ�ֳ�����</p>
+<h3 id="����abstract-���ص㣩"><a href="#����abstract-���ص㣩" class="headerlink" title="����abstract ���ص㣩"></a>����abstract ���ص㣩</h3><p>�����࣬������ģ�ͻ���Щ�����޷�ȷ��ȫ��ʵ�֣��������������ṩ����ʵ�ֵĶ������<br>abstract������ģ��������������ࡢ����</p>
+<p>1.abstract�����࣬������<br>1&gt;���ɱ�ʵ����<br>2&gt;�������й�������Ϊ������ĵ��ã��������඼�й�������<br>3&gt;���󷽷����ڵ���һ���ǳ����ࣨ��Ϊ������ǳ����࣬�����ʵ�����������󷽷���û�з�����ģ�<br>4&gt;�������п���û�г��󷽷�<br>5&gt;�������漰һ���࣬����Ҫ���������ʵ����ʱ�򣬾Ϳ��Կ��ǽ�������Ϊ����ģ���������ʵ�������ĳ��󷽷���</p>
+<p>2.abstract���η��������󷽷�<br>1&gt;��ʽ��û�з����壬����{}���磺public abstract void eat();<br>2&gt;���󷽷�ֻ������Ĺ��ܣ������ִ�У������̳г���������࣬��������ʵ�֣���д��<br>3&gt;������̳��˳����࣬����д�����еĳ��󷽷�������������ʵ����<br>4&gt;������̳��˳����࣬��û����д���еĳ��󷽷�����ζ�Ŵ����м̳��˳������еĳ��󷽷���������������Ϊ�����</p>
+<h3 id="�ӿ�interface���ص㣩"><a href="#�ӿ�interface���ص㣩" class="headerlink" title="�ӿ�interface���ص㣩"></a>�ӿ�interface���ص㣩</h3><p>�ӿڣ�Interface��   �����ಢ�е�һ������<br>1.�ӿڿ��Կ�����һ������ĳ����ࡣ�ǳ�������󷽷���һ�����ϣ����ܰ��������Լ�һ��ķ�����<br>2.�ӿ���û�й������ġ�<br>3.�ӿڶ���ľ���һ�ֹ��ܣ��˹��ܿ��Ա�����ʵ�֣�implements����<br>���磺class  CC extends DD implements AA<br>4.ʵ�ֽӿڵ��࣬����Ҫ��дԭ�ӿ������еĳ��뷽��������ʵ��������δ��д���еĳ��󷽷����������Ϊһ��������<br>5.�����ʵ�ֶ���ӿڡ�—–java����ļ̳��ǵ��̳е�<br>6.�ӿ���ӿ�֮��Ҳ�Ǽ̳еĹ�ϵ���ӿڵļ̳��Ƕ�̳е�</p>
+<blockquote>
+<p>5,6����������Java�̳е��ص�<br>7.�ӿ�������ʵ����֮��Ҳ���ڶ�̬��<br>8.����ӿڱ��˼��</p>
+</blockquote>
+<h3 id="�ڲ���"><a href="#�ڲ���" class="headerlink" title="�ڲ���"></a>�ڲ���</h3><p>��ĵ������Ա���ڲ���<br>1.��������ڲ��ٶ����࣬����Ľ��ⲿ�࣬����Ľ��ڲ���<br>2.�ڲ���ķ��ࣺ��Ա�ڲ��ࣨ���������ڲ��ҷ����⣩���ֲ��ڲ��ࣨ��������ķ����ڣ�<br>3.��Ա�ڲ��ࣺ<br>    3.1���ⲿ���һ����Ա��1&gt;���������η���4������������˵�������������η�,public��Ĭ�ϣ�<br>                           2&gt;������static final����<br>                           3&gt;���Ե����ⲿ������Ժͷ���<br>    3.2��������ص㣺1&gt;������abstract����<br>                     2&gt;�����������ڲ��������ԡ�������������<br>4.�ֲ��ڲ��ࣺ</p>
+<p>�����ڲ��࣬�������㣺<br>1&gt;��δ�����Ա�ڲ���Ķ����磺����Bird���Dog��Ķ���<br>2&gt;������ֵ����ⲿ�����ڲ���ı����������Ǳ�������ʱ��<br>3&gt;�ֲ��ڲ����ʹ��    //��TestInnerClass1</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/java/" rel="tag"># java</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/11/15/Java-OOP-Eg/" rel="next" title="Java_OOP_Eg">
+                <i class="fa fa-chevron-left"></i> Java_OOP_Eg
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/12/24/java-04-exception/" rel="prev" title="java-04-exception">
+                java-04-exception <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">HongbinW</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">标签</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#static"><span class="nav-number">1.</span> <span class="nav-text">static</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#����gʽ"><span class="nav-number">1.1.</span> <span class="nav-text">����ģʽ</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#main-����"><span class="nav-number">2.</span> <span class="nav-text">main()����</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#�����"><span class="nav-number">3.</span> <span class="nav-text">�����</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#final�ؼ���"><span class="nav-number">4.</span> <span class="nav-text">final�ؼ���</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#����abstract-���ص㣩"><span class="nav-number">5.</span> <span class="nav-text">����abstract ���ص㣩</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#�ӿ�interface���ص㣩"><span class="nav-number">6.</span> <span class="nav-text">�ӿ�interface���ص㣩</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#�ڲ���"><span class="nav-number">7.</span> <span class="nav-text">�ڲ���</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">HongbinW</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="面向对象基础一、面向对象思想 1.面向对象编程的特征：封装性 继承性 多态性 （抽象性） 2.类及类的构成成分：属性 方法 构造器 代码块 内部类 3.创建的多个对象，彼此各自拥有一套类的属性。 4.具体实现   1）设计类，并设计类的成员（成员变量&amp;amp;成员方法）   2）通过类，来创建类的对象（或类的实例化）   3）通过“对象.属性”或“对象.方法”调用，来完成相应的功能 二、类类的属性">
+<meta name="description" content="����������һ���������˼�� 1.��������̵���������װ�� �̳��� ��̬�� �������ԣ� 2.�༰��Ĺ��ɳɷ֣����� ���� ������ ����� �ڲ��� 3.�����Ķ�����󣬱˴˸���ӵ��һ��������ԡ� 4.����ʵ��   1������࣬�������ĳ�Ա����Ա����&amp;amp;��Ա������">
 <meta name="keywords" content="java">
 <meta property="og:type" content="article">
 <meta property="og:title" content="java-02-OOP">
 <meta property="og:url" content="http://yoursite.com/2018/11/13/java-02-OOP/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="面向对象基础一、面向对象思想 1.面向对象编程的特征：封装性 继承性 多态性 （抽象性） 2.类及类的构成成分：属性 方法 构造器 代码块 内部类 3.创建的多个对象，彼此各自拥有一套类的属性。 4.具体实现   1）设计类，并设计类的成员（成员变量&amp;amp;成员方法）   2）通过类，来创建类的对象（或类的实例化）   3）通过“对象.属性”或“对象.方法”调用，来完成相应的功能 二、类类的属性">
+<meta property="og:description" content="����������һ���������˼�� 1.��������̵���������װ�� �̳��� ��̬�� �������ԣ� 2.�༰��Ĺ��ɳɷ֣����� ���� ������ ����� �ڲ��� 3.�����Ķ�����󣬱˴˸���ӵ��һ��������ԡ� 4.����ʵ��   1������࣬�������ĳ�Ա����Ա����&amp;amp;��Ա������">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-11-21T14:47:12.564Z">
+<meta property="og:updated_time" content="2018-12-02T07:57:13.922Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="java-02-OOP">
-<meta name="twitter:description" content="面向对象基础一、面向对象思想 1.面向对象编程的特征：封装性 继承性 多态性 （抽象性） 2.类及类的构成成分：属性 方法 构造器 代码块 内部类 3.创建的多个对象，彼此各自拥有一套类的属性。 4.具体实现   1）设计类，并设计类的成员（成员变量&amp;amp;成员方法）   2）通过类，来创建类的对象（或类的实例化）   3）通过“对象.属性”或“对象.方法”调用，来完成相应的功能 二、类类的属性">
+<meta name="twitter:description" content="����������һ���������˼�� 1.��������̵���������װ�� �̳��� ��̬�� �������ԣ� 2.�༰��Ĺ��ɳɷ֣����� ���� ������ ����� �ڲ��� 3.�����Ķ�����󣬱˴˸���ӵ��һ��������ԡ� 4.����ʵ��   1������࣬�������ĳ�Ա����Ա����&amp;amp;��Ա������">
 
 
 
@@ -310,40 +310,99 @@
       
 
       
-        <h2 id="面向对象基础"><a href="#面向对象基础" class="headerlink" title="面向对象基础"></a>面向对象基础</h2><h3 id="一、面向对象思想"><a href="#一、面向对象思想" class="headerlink" title="一、面向对象思想"></a>一、面向对象思想</h3><p> 1.面向对象编程的特征：封装性 继承性 多态性 （抽象性）<br> 2.类及类的构成成分：属性 方法 构造器 代码块 内部类<br> 3.创建的多个对象，彼此各自拥有一套类的属性。<br> 4.具体实现<br>   1）设计类，并设计类的成员（成员变量&amp;成员方法）<br>   2）通过类，来创建类的对象（或类的实例化）<br>   3）通过“对象.属性”或“对象.方法”调用，来完成相应的功能</p>
-<h3 id="二、类"><a href="#二、类" class="headerlink" title="二、类"></a>二、类</h3><h4 id="类的属性（成员变量）"><a href="#类的属性（成员变量）" class="headerlink" title="类的属性（成员变量）"></a>类的属性（成员变量）</h4><p>成员变量 vs 局部变量<br>相同点： 1.遵循变量声明的格式：修饰符  数据类型  变量名 =  初始化值<br>             2.都有作用域<br>不同点：<br>1.声明的位置不同：成员变量：声明在类里，方法外<br>                 局部变量：声明在方法内以及方法的形参部分，代码块内<br>2.成员变量的修饰符有四个：public private protected 缺省<br>  局部变量没有修饰符<br>3.初始化值：一定会有初始化值<br>成员变量：如果在声明的时候未显式地赋值，那么不同数据类型会有不同的默认初始化值<br>局部变量：一定要显式地赋值。（没有默认初始化值）<br>4.二者在内存中存放的位置不同：成员变量存在堆空间中，局部变量存在栈空间中</p>
-<h4 id="类的方法：提供某种功能的实现"><a href="#类的方法：提供某种功能的实现" class="headerlink" title="类的方法：提供某种功能的实现"></a>类的方法：提供某种功能的实现</h4><pre><code>1)实例：public void eat(){}
+        <h1 id="����������"><a href="#����������" class="headerlink" title="����������"></a>����������</h1><h2 id="һ���������˼��"><a href="#һ���������˼��" class="headerlink" title="һ���������˼��"></a>һ���������˼��</h2><p> 1.��������̵���������װ�� �̳��� ��̬�� �������ԣ�<br> 2.�༰��Ĺ��ɳɷ֣����� ���� ������ ����� �ڲ���<br> 3.�����Ķ�����󣬱˴˸���ӵ��һ��������ԡ�<br> 4.����ʵ��<br>   1������࣬�������ĳ�Ա����Ա����&amp;��Ա������<br>   2��ͨ���࣬��������Ķ��󣨻����ʵ������<br>   3��ͨ��������.���ԡ��򡰶���.���������ã��������Ӧ�Ĺ���</p>
+<h2 id="������"><a href="#������" class="headerlink" title="������"></a>������</h2><h3 id="������ԣ���Ա������"><a href="#������ԣ���Ա������" class="headerlink" title="������ԣ���Ա������"></a>������ԣ���Ա������</h3><p>��Ա���� vs �ֲ�����<br>��ͬ�㣺 1.��ѭ���������ĸ�ʽ�����η�  ��������  ������ =  ��ʼ��ֵ<br>             2.����������<br>��ͬ�㣺<br>1.������λ�ò�ͬ����Ա���������������������<br>                 �ֲ������������ڷ������Լ��������ββ��֣��������<br>2.��Ա���������η����ĸ���public private protected ȱʡ<br>  �ֲ�����û�����η�<br>3.��ʼ��ֵ��һ�����г�ʼ��ֵ<br>��Ա�����������������ʱ��δ��ʽ�ظ�ֵ����ô��ͬ�������ͻ��в�ͬ��Ĭ�ϳ�ʼ��ֵ<br>�ֲ�������һ��Ҫ��ʽ�ظ�ֵ����û��Ĭ�ϳ�ʼ��ֵ��<br>4.�������ڴ��д�ŵ�λ�ò�ͬ����Ա�������ڶѿռ��У��ֲ���������ջ�ռ���</p>
+<h3 id="��k������sĳ�ֹ��ܵ�ʵ��"><a href="#��k������sĳ�ֹ��ܵ�ʵ��" class="headerlink" title="��ķ������ṩĳ�ֹ��ܵ�ʵ��"></a>��ķ������ṩĳ�ֹ��ܵ�ʵ��</h3><pre><code>1)ʵ����public void eat(){}
         public String getName(){}
         public void setName(String n){}
-  格式： 权限修饰符 返回值类型（void：无返回值/具体的返回值，如：String） 方法名（形参）{ }
-2）关于返回值类型：void：表明此方法不需要返回值
-                   有返回值的方法：在方法的最后一定有 return + 返回值类型的变量
-3）方法内可以调用本类的其它方法和属性，但不能定义新的方法
-</code></pre><h4 id="构造器"><a href="#构造器" class="headerlink" title="构造器"></a>构造器</h4><p>构造器作用：（1）创建对象（2）初始化对象的属性<br>几点说明：<br>1&gt;设计类时，若不显示声明类的构造器的话，程序会默认提供一个空参的构造器<br>2&gt;一旦显示地定义类的构造器，那么默认的构造器就不再提供<br>3&gt;如何声明类的构造器。格式：权限修饰符 类名 (){  }<br>4&gt;类的多个构造器之间构成重载<br>5&gt;类对象的属性赋值的先后顺序：（1）属性的默认初始化（根据类型）<br>                            （2）属性的显示的初始化（在类创建属性时）<br>                            （3）通过构造器给属性初始化<br>                            （4）通过对象.方法的方式给属性赋值</p>
-<h4 id="方法的重载（overload"><a href="#方法的重载（overload" class="headerlink" title="方法的重载（overload)"></a>方法的重载（overload)</h4><p>要求： 1.同一类中 2.方法名必须相同 3.方法的参数列表不同（个数、类型）<br>补充： 方法的重载与方法的返回值类型没有关系！</p>
-<h4 id="方法的参数传递（重点、难点）"><a href="#方法的参数传递（重点、难点）" class="headerlink" title="方法的参数传递（重点、难点）"></a><strong>方法的参数传递（重点、难点）</strong></h4><p> 1.形参：方法声明时，方法小括号内的参数。<br>   实参：调用方法时，实际传入的参数的值<br> 2.规则：Java中的参数传递机制：值传递机制<br>   1&gt;形参是基本数据类型的：将实参的值传递给形参的基本数据类型的变量<br>   2&gt;形参时引用数据类型的：将实参的引用类型变量的值（对应的堆空间对象实体的首地址）传递给形参的引用类型变量<br>     所以通过此方法形参和实参指向的是同一对象</p>
-<h4 id="this"><a href="#this" class="headerlink" title="this"></a>this</h4><p>1.可以用来修饰属性、方法、构造器，通常用于形参与成员变量重名，不重名this省略<br>2.this理解为当前对象或当前正在创建的对象。比如this.name,this.show()；<br>3.可以在构造器中通过”this(形参)”的方式显示地调用本类中其他重载的指定的构造器。<br>  要求：1.在构造器内部必须声明在首行！<br>        2.若一个类中有N个构造器，则最多有N-1个构造器使用了this(形参)</p>
-<h4 id="package-and-import"><a href="#package-and-import" class="headerlink" title="package and import"></a>package and import</h4><h5 id="package-声明源文件所在的包，写在程序的第一行。"><a href="#package-声明源文件所在的包，写在程序的第一行。" class="headerlink" title="package:声明源文件所在的包，写在程序的第一行。"></a>package:声明源文件所在的包，写在程序的第一行。</h5><ul>
-<li>每“.”一次，表示一层文件目录。</li>
-<li>包名都要小写。<h5 id="import"><a href="#import" class="headerlink" title="import:"></a>import:</h5></li>
-<li>1)显式导入指定包下的类或接口</li>
-<li>2)写在包的声明和源文件之间</li>
-<li>3)如果需要引入多个类或接口，那么就并列写出</li>
-<li>4)如果导入的类是java.lang包下的，如：System String Math等，就不需要显式的声明。</li>
-<li>5)理解.<em>的概念。比如java.util.</em>;</li>
-<li>6)如何处理同名类的导入。如：在util包和sql包下同时存在Date类。显示地使用</li>
-<li>7)import static 表示导入指定类的static的属性或方法</li>
-<li>8)导入java.lang.*只能导入lang包下的所有类或接口，不能导入lang的子包下的类或接口<h5 id="常用包"><a href="#常用包" class="headerlink" title="常用包"></a>常用包</h5>1.java.lang—-包含一些Java语言的核心类，如String、Math、Integer、System和Thread，提供常用功能。<br>2.java.net—-包含执行与网络相关的操作的类和接口。<br>3.java.io   —-包含能提供多种输入/输出功能的类。<br>4.java.util—-包含一些实用工具类，如定义系统特性、接口的集合框架类、使用与日期日历相关的函数。<br>5.java.text—-包含了一些java格式化相关的类<br>6.java.sql—-包含了java进行JDBC数据库编程的相关类/接口<br>7.java.awt—-包含了构成抽象窗口工具集（abstract window toolkits）的多个类，这些类被用来构建和管理应用程序的图形用户界面(GUI)。<br>8.java.applet—-包含applet运行所需的一些类。<h4 id="类的初始化的内存解析"><a href="#类的初始化的内存解析" class="headerlink" title="类的初始化的内存解析"></a>类的初始化的内存解析</h4>内存划分的结构：<br>栈（stack)：局部变量、对象的引用名，数组的引用名<br>堆（heap)：new出来的“东西”（如：对象的实体，数组的实体）<br>方法区：含字符串常量<br>静态域：声明为static的变量<h3 id="三、面向对象的特性"><a href="#三、面向对象的特性" class="headerlink" title="三、面向对象的特性"></a>三、面向对象的特性</h3><h4 id="封装性"><a href="#封装性" class="headerlink" title="封装性"></a>封装性</h4>  问题：当创建了类的对象以后，如果直接通过“对象.属性”的方式对响应的对象属性赋值的话，可能会出现不满足实际情况的以外，我们考虑不让对象来直接作用属性，而是通过“对象.方法”的形式来控制对象对属性的访问。<br>  解决方法：（封装性的思想）①将类的属性私有化,②通过公共的方法（set&amp;get)来是实现调用</li>
+  ��ʽ�� Ȩ�����η� ����ֵ���ͣ�void���޷���ֵ/����ķ���ֵ���磺String�� ���������βΣ�{ }
+2�����ڷ���ֵ���ͣ�void�������˷�������Ҫ����ֵ
+                   �з���ֵ�ķ������ڷ��������һ���� return + ����ֵ���͵ı���
+3�������ڿ��Ե��ñ�����������������ԣ������ܶ����µķ���
+</code></pre><h3 id="������-1"><a href="#������-1" class="headerlink" title="������"></a>������</h3><p>���������ã���1����������2����ʼ�����������<br>����˵����<br>1&gt;�����ʱ������ʾ������Ĺ������Ļ��������Ĭ���ṩһ���ղεĹ�����<br>2&gt;һ����ʾ�ض�����Ĺ���������ôĬ�ϵĹ������Ͳ����ṩ<br>3&gt;���������Ĺ���������ʽ��Ȩ�����η� ���� (){  }<br>4&gt;��Ķ��������֮�乹������<br>5&gt;���������Ը�ֵ���Ⱥ�˳��<br>��1�����Ե�Ĭ�ϳ�ʼ�����������ͣ�<br>��2�����Ե���ʾ�ĳ�ʼ�������ഴ������ʱ����������ʼ�����˴������ṹ����˳��ִ�У�<br>��3��ͨ�������������Գ�ʼ��<br>��4��ͨ������.�����ķ�ʽ�����Ը�ֵ</p>
+<h3 id="���������أ�overload"><a href="#���������أ�overload" class="headerlink" title="���������أ�overload)"></a>���������أ�overload)</h3><p>Ҫ�� 1.ͬһ���� 2.������������ͬ 3.�����Ĳ����б�ͬ�����������ͣ�<br>���䣺 �����������뷽���ķ���ֵ����û�й�ϵ��</p>
+<h3 id="�����Ĳ������ݣ��ص㡢�ѵ㣩"><a href="#�����Ĳ������ݣ��ص㡢�ѵ㣩" class="headerlink" title="�����Ĳ������ݣ��ص㡢�ѵ㣩"></a><strong>�����Ĳ������ݣ��ص㡢�ѵ㣩</strong></h3><p> 1.�βΣ���������ʱ������С�����ڵĲ�����<br>    ʵ�Σ����÷���ʱ��ʵ�ʴ���Ĳ�����ֵ<br> 2.����Java�еĲ������ݻ��ƣ�ֵ���ݻ���<br>   1&gt;�β��ǻ����������͵ģ���ʵ�ε�ֵ���ݸ��βεĻ����������͵ı���<br>   2&gt;�β�ʱ�����������͵ģ���ʵ�ε��������ͱ�����ֵ����Ӧ�Ķѿռ����ʵ����׵�ַ�����ݸ��βε��������ͱ���<br>     ����ͨ���˷����βκ�ʵ��ָ�����ͬһ����</p>
+<h3 id="this"><a href="#this" class="headerlink" title="this"></a>this</h3><p>1.���������������ԡ���������������ͨ�������β����Ա��������������������this����ǿ�Ķ���<br>2.this���Ϊ��ǰ�����ǰ���ڴ����Ķ��󡣱���this.name,this.show()��<br>3.�����ڹ�������ͨ��”this(�β�)”�ķ�ʽ��ʾ�ص��ñ������������ص�ָ���Ĺ�������<br>  Ҫ��1.�ڹ������ڲ��������������У�<br>        2.��һ��������N�����������������N-1��������ʹ����this(�β�)</p>
+<h3 id="package-and-import"><a href="#package-and-import" class="headerlink" title="package and import"></a>package and import</h3><h4 id="package-����Դ�l����ڵI���д�ڳ���j�һ�С�"><a href="#package-����Դ�l����ڵI���д�ڳ���j�һ�С�" class="headerlink" title="package:����Դ�ļ����ڵİ���д�ڳ���ĵ�һ�С�"></a>package:����Դ�ļ����ڵİ���д�ڳ���ĵ�һ�С�</h4><ul>
+<li>ÿ��.��һ�Σ���ʾһ���ļ�Ŀ¼��</li>
+<li>������ҪСд��<h4 id="import"><a href="#import" class="headerlink" title="import:"></a>import:</h4></li>
+<li>1)��ʽ����ָ�����µ����ӿ�</li>
+<li>2)д�ڰ���������Դ�ļ�֮��</li>
+<li>3)�����Ҫ���������ӿڣ���ô�Ͳ���д��</li>
+<li>4)������������java.lang���µģ��磺System String Math�ȣ��Ͳ���Ҫ��ʽ��������</li>
+<li>5)���.<em>�ĸ������java.util.</em>;</li>
+<li>6)��δ���ͬ����ĵ��롣�磺��util����sql����ͬʱ����Date�ࡣ��ʾ��ʹ��</li>
+<li>7)import static ��ʾ����ָ�����static�����Ի򷽷�</li>
+<li>8)����java.lang.*ֻ�ܵ���lang���µ��������ӿڣ����ܵ���lang���Ӱ��µ����ӿ�<h4 id="���ð�"><a href="#���ð�" class="headerlink" title="���ð�"></a>���ð�</h4>1.java.lang—-����һЩJava���Եĺ����࣬��String��Math��Integer��System��Thread���ṩ���ù��ܡ�<br>2.java.net—-����ִ����������صĲ�������ͽӿڡ�<br>3.java.io   —-�������ṩ��������/������ܵ��ࡣ<br>4.java.util—-����һЩʵ�ù����࣬�綨��ϵͳ���ԡ��ӿڵļ��Ͽ���ࡢʹ��������������صĺ�����<br>5.java.text—-������һЩjava��ʽ����ص���<br>6.java.sql—-������java����JDBC���ݿ��̵������/�ӿ�<br>7.java.awt—-�����˹��ɳ��󴰿ڹ��߼���abstract window toolkits���Ķ���࣬��Щ�౻���������͹���Ӧ�ó����ͼ���û�����(GUI)��<br>8.java.applet—-����applet���������һЩ�ࡣ<h3 id="object��"><a href="#object��" class="headerlink" title="object��"></a>object��</h3>1.java.lang.Object�࣬��������ĸ����ࡣ<br>2.Object�����һ���ղι����� public Object(){}<br>3.���ڷ�����<h4 id="equals-Object-obj"><a href="#equals-Object-obj" class="headerlink" title="equals(Object obj)"></a>equals(Object obj)</h4>equals(): 1&gt;ֻ�ܴ����������ͱ���  2&gt;��Ȼ�Ƚϵ��������ñ����ĵ�ֵַ�Ƿ����</li>
 </ul>
-<p>权限修饰符：public protected 缺省 private</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">public boolean equals��Object obj)&#123;</span><br><span class="line">	return(this == obj);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>��String��  ��װ��  File��   Data��  ��д��equals()������ʵ�ʱȽϵ�������ʵ��������Ƿ���ͬ<br>���ԣ����������Ҫ�Ƚ��������������ֵ����ͬ������·���true������Ҫ��дObject���equals(Object obj)����<br>//==<br>//1.�����������ͣ����ݻ����������͵�ֵ�ж��Ƿ���ȡ���ȷ���true����֮����false<br>//ע�������������Ϳ��Բ�ͬ<br>//2.�����������ͣ��Ƚ��������ͱ����ĵ�ֵַ�Ƿ����</p>
+<h4 id="toString-Object-obj"><a href="#toString-Object-obj" class="headerlink" title="toString(Object obj)"></a>toString(Object obj)</h4><p><em>toString()������
+</em>java.lang.Object���toString()�����Ķ������£�<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">public String toString()&#123;</span><br><span class="line">    return getClass().getName() + &quot;@&quot; + Integer.toHexString(hashCode())��</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure></p>
+<p> 1.�����Ǵ�ӡһ�����������ʱ��ʵ����Ĭ�ϵ��õľ�����������toString()����<br> 2.�����Ǵ�ӡ�Ķ������ڵ���û����дObject�е�toString()����ʱ����ô���õľ���Object�е�toString()����<br>   ���ش˶������ڵ��༰��Ӧ�Ķѿռ����ʵ����׵�ֵַ<br> 3.ͨ����������д������������Ե���Ϣ����<br> 4.��String�ࡢ��װ�ࡢFile�ࡢDate��ȣ��Ѿ�ʵ����Object���е�toString()��������д�����ص���ʵ������</p>
+<h4 id="wrapper��"><a href="#wrapper��" class="headerlink" title="wrapper��"></a>wrapper��</h4><table>
+<thead>
+<tr>
+<th>������������</th>
+<th>��װ��</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>boolean</td>
+<td>Boolean</td>
+<td></td>
+</tr>
+<tr>
+<td>byte</td>
+<td>Byte</td>
+<td></td>
+</tr>
+<tr>
+<td>short</td>
+<td>Short</td>
+<td></td>
+</tr>
+<tr>
+<td>int</td>
+<td>Integer</td>
+<td></td>
+</tr>
+<tr>
+<td>long</td>
+<td>Long</td>
+<td></td>
+</tr>
+<tr>
+<td>char</td>
+<td>Character</td>
+<td></td>
+</tr>
+<tr>
+<td>float</td>
+<td>Float</td>
+<td></td>
+</tr>
+<tr>
+<td>double</td>
+<td>Double</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>��ϸ��java_abc.src.adclass.TestWrapper</strong><br>���װ棺<br>//�����������͡���װ����String��֮���ת��<br>1&gt;�����������͡���װ��—-&gt;String�ࣺ����String��ľ�̬�����ص�valueOf(Xxxx x)����<br>2&gt;String��—-&gt;�����������͡���װ�ࣺ���ð�װ���parseXxxx(String str)����<br><em>��String֮��ת����ת��˭������˭�ķ���</em><br>//���������������װ��֮���ת��<br>1&gt;������������—-&gt;��Ӧ�İ�װ�࣬���ð�װ��Ĺ�����<br>2&gt;��װ��—–&gt;�����������ͣ����ð�װ���Xxx��xxxValue()����<br>�ϼ򵥵ķ������Բ����Զ�װ�����</p>
+<h3 id="��ĳ�ʼ�����ڴ����"><a href="#��ĳ�ʼ�����ڴ����" class="headerlink" title="��ĳ�ʼ�����ڴ����"></a>��ĳ�ʼ�����ڴ����</h3><p>  �ڴ滮�ֵĽṹ��<br>  ջ��stack)���ֲ�������������������������������<br>  �ѣ�heap)��new�����ġ����������磺�����ʵ�壬�����ʵ�壩<br>  �����������ַ�������<br>  ��̬������Ϊstatic�ı���</p>
+<h2 id="����������������"><a href="#����������������" class="headerlink" title="����������������"></a>����������������</h2><h3 id="��װ��"><a href="#��װ��" class="headerlink" title="��װ��"></a>��װ��</h3><pre><code>���⣺����������Ķ����Ժ����ֱ��ͨ��������.���ԡ��ķ�ʽ����Ӧ�Ķ������Ը�ֵ�Ļ������ܻ���ֲ�����ʵ����������⣬���ǿ��ǲ��ö�����ֱ���������ԣ�����ͨ��������.����������ʽ�����ƶ�������Եķ��ʡ�
+�������������װ�Ե�˼�룩�ٽ��������˽�л�,��ͨ�������ķ�����set&amp;get)����ʵ�ֵ���
+</code></pre><p>Ȩ�����η���public protected ȱʡ private</p>
 <table>
 <thead>
 <tr>
-<th>修饰符</th>
-<th>类内部</th>
-<th>同一个包</th>
-<th>子类</th>
-<th>任何地方</th>
+<th>���η�</th>
+<th>���ڲ�</th>
+<th>ͬһ����</th>
+<th>����</th>
+<th>�κεط�</th>
 </tr>
 </thead>
 <tbody>
@@ -363,7 +422,7 @@
 <td></td>
 </tr>
 <tr>
-<td>缺省</td>
+<td>ȱʡ</td>
 <td>Yes</td>
 <td>Yes</td>
 <td></td>
@@ -375,7 +434,14 @@
 </tr>
 </tbody>
 </table>
-<p>四种权限均可修饰属性、方法、构造器；对于类来说，只有pulic和缺省</p>
+<p>����Ȩ�޾����������ԡ�����������������������˵��ֻ��pulic��ȱʡ</p>
+<h3 id="�̳���"><a href="#�̳���" class="headerlink" title="�̳���"></a>�̳���</h3><p>1.ͨ����class A extends B��ʵ����ļ̳�<br>     ���ࣺA      ���ࣨsuperclass����B<br>2.����̳и���󣬸��������������ԡ����������඼���Եõ���<br>ע��<br>  1�����ڸ�������private�����ԣ�������Ȼ�ܻ�ȡ�����������ڷ�װ�Ժ�Ȩ�޵����ⲻ��ʹ��<br>  2���������ͨ���̳У���ȡ����Ľṹ֮�⣬�����Զ����Լ����еĳɷ֡�<br>  3�������ǶԸ��๦�ܵġ���չ������ȷ���಻�Ǹ�����Ӽ���<br>3.Java����ļ̳���ֻ֧�ֵ��̳С���һ����ֻ�ܼ̳�һ�����ࡣ��һ���������ӵ�ж�����ࡣ<br>4.���ุ������Եĸ����������Ȼ�����ٴα��̳У�����������һ�Ը�������Ĺ�ϵ��</p>
+<h4 id="��������д"><a href="#��������д" class="headerlink" title="��������д"></a>��������д</h4><p>1.ǰ�᣺������̳и���<br>2.����̳и��������ķ��������಻���ã���ô������ԶԸ���ķ�����д(override/overwrite)�����ǡ�<br>3.����<br>  1��Ҫ�����෽���� ������ֵ���� �������������б� ���븸�෽��һ����<br>  2�����෽�������η�Ȩ�޲���С�ڸ���ķ��������ڸ���private�ķ�������   ���൱�����¶��塣<br>  3�����෽�����쳣����ô���෽���׵��쳣���Ͳ��ܴ��ڸ��ࡣ<br>  4���Ӹ���ķ�������ͬΪstatic��ͬΪ��static�ġ�</p>
+<h4 id="super"><a href="#super" class="headerlink" title="super"></a>super</h4><p>super:���������������ԡ�������������<br>1���������븸������ͬ��������ʱ������ͨ����super.���ԡ���ʾ�ص��ø��������������ԡ�������������ͬ�������ԡ�this.���ԡ�<br>2����������д����ķ����Ժ�����������������ʾ�ص��ø���ı���д�ķ��������á�super.������<br>3��super���ι�������ͨ����������ʹ�á�super(�β��б�)������ʾ�ص��ø�����ָ���Ĺ�����<br>    &gt;�ڹ������ڲ�����super(�β��б�)���������������У�<br>    &gt;�ڹ������ڲ���ͨ��this��super��������������ʱ����this(�β��б�)����super(�β��б�)��ֻ�ܳ���һ����<br>������ֻ��this�����൱���ù�������Ĭ�ϵ��ø���ղι��������ٵ���this��ָ��Ĺ�������<br>    &gt;���������в���ʾ�ص��á�this(�β��б�)����super(�β��б�)��Ĭ�ϵص��ø���Ŀղι�����<br>    ���飺���һ�����ǣ�����Ҫ�ṩһ���ղεĹ�����������Ĭ�ϵ��ø���ղι�����ʱ�ᱨ��</p>
+<h4 id="����ʵ������o����"><a href="#����ʵ������o����" class="headerlink" title="����ʵ������ȫ����"></a>����ʵ������ȫ����</h4><p>���¾��Ǵ����಻�ϵص��ø��ࡢ����ĸ���֪�����õ�Object�࣬Ȼ������������õ����Ժͷ���</p>
+<h3 id="��̬��"><a href="#��̬��" class="headerlink" title="��̬��"></a>��̬��</h3><p>1.��̬��ָ����ʲô��<br>��̬�Կ������Ϊһ������Ķ��ֱ�����̬<br>    1����������������д  2���������Ķ�̬��<br>2.�������Ķ�̬��ʹ�õ�ǰ�᣺1&gt;Ҫ����ļ̳� 2&gt;Ҫ������Ը��෽������д<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">//�������Ķ�̬�ԣ����������ָ��������󣨻���˵��������ʵ�帳����������ã�</span><br><span class="line">Person p1 = new Man();  //����ת��</span><br><span class="line">//���ⷽ�����ã�ͨ�����������ָ������Ķ���ʵ�壬�����÷���ʱ��ʵ��ִ�е���������д����ķ�����</span><br><span class="line">p1.eat();</span><br><span class="line">p1.walk();</span><br></pre></td></tr></table></figure></p>
+<p>3.�����Ϊ����״̬������״̬<br>    ���ڶද̬����˵������ʱ��������ߡ����������ñ������Ϊ���������<br>                      ����ʱ�������ұߡ�����ע�������Ķ����ʵ�壺����Ķ�����ôִ�еķ�������������д�ġ�</p>
+<p>��̬�ԣ���ҪӦ�����࣬����Ҫ����Ĳ���Ϊ�����ʵ��ʱ��Ҳ���Դ�������ģ��������Բ���д�������<br>����package basic.adclass.testDuotai;�е�TestAnimal)<br>4.�������Ķ�̬�Բ������������ԡ� ��Ϊ�������������Զ�����ص��ڴ��С�<br>5.��������ת�ͣ�<br>1&gt;����ת�ͣ�ʹ��ǿת����()<br>2&gt;Ϊ�˱�֤����ClassCastException�����������ת��ǰ�������жϣ�instanceof<br>��ʽ������a instanceof ��A �� �ж϶���a�Ƿ�����A��һ��ʵ�����ǵĻ�����true�����򷵻�false<br>//��a��A���ʵ������ôaҲһ����A��ĸ����ʵ��<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">if(p1 instanceof Woman)&#123;</span><br><span class="line">    Woman w2 = (Woman) p1;</span><br><span class="line">    w2.shooping();</span><br><span class="line">&#125;</span><br><span class="line">if(p1 instanceof Man)&#123;</span><br><span class="line">    Man m2 = (Man) p1;</span><br><span class="line">    m2.dance();</span><br><span class="line">&#125;</span><br><span class="line">if(p1 instanceof Person)&#123;</span><br><span class="line">    System.out.println(&quot;Hello&quot;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -495,7 +561,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-count">15</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -541,7 +607,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#面向对象基础"><span class="nav-number">1.</span> <span class="nav-text">面向对象基础</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#一、面向对象思想"><span class="nav-number">1.1.</span> <span class="nav-text">一、面向对象思想</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二、类"><span class="nav-number">1.2.</span> <span class="nav-text">二、类</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#类的属性（成员变量）"><span class="nav-number">1.2.1.</span> <span class="nav-text">类的属性（成员变量）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#类的方法：提供某种功能的实现"><span class="nav-number">1.2.2.</span> <span class="nav-text">类的方法：提供某种功能的实现</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#构造器"><span class="nav-number">1.2.3.</span> <span class="nav-text">构造器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#方法的重载（overload"><span class="nav-number">1.2.4.</span> <span class="nav-text">方法的重载（overload)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#方法的参数传递（重点、难点）"><span class="nav-number">1.2.5.</span> <span class="nav-text">方法的参数传递（重点、难点）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#this"><span class="nav-number">1.2.6.</span> <span class="nav-text">this</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#package-and-import"><span class="nav-number">1.2.7.</span> <span class="nav-text">package and import</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#package-声明源文件所在的包，写在程序的第一行。"><span class="nav-number">1.2.7.1.</span> <span class="nav-text">package:声明源文件所在的包，写在程序的第一行。</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#import"><span class="nav-number">1.2.7.2.</span> <span class="nav-text">import:</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#常用包"><span class="nav-number">1.2.7.3.</span> <span class="nav-text">常用包</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#类的初始化的内存解析"><span class="nav-number">1.2.8.</span> <span class="nav-text">类的初始化的内存解析</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三、面向对象的特性"><span class="nav-number">1.3.</span> <span class="nav-text">三、面向对象的特性</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#封装性"><span class="nav-number">1.3.1.</span> <span class="nav-text">封装性</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#����������"><span class="nav-number">1.</span> <span class="nav-text">����������</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#һ���������˼��"><span class="nav-number">1.1.</span> <span class="nav-text">һ���������˼��</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#������"><span class="nav-number">1.2.</span> <span class="nav-text">������</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#������ԣ���Ա������"><span class="nav-number">1.2.1.</span> <span class="nav-text">������ԣ���Ա������</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#��k������sĳ�ֹ��ܵ�ʵ��"><span class="nav-number">1.2.2.</span> <span class="nav-text">��ķ������ṩĳ�ֹ��ܵ�ʵ��</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#������-1"><span class="nav-number">1.2.3.</span> <span class="nav-text">������</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#���������أ�overload"><span class="nav-number">1.2.4.</span> <span class="nav-text">���������أ�overload)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#�����Ĳ������ݣ��ص㡢�ѵ㣩"><span class="nav-number">1.2.5.</span> <span class="nav-text">�����Ĳ������ݣ��ص㡢�ѵ㣩</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#this"><span class="nav-number">1.2.6.</span> <span class="nav-text">this</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#package-and-import"><span class="nav-number">1.2.7.</span> <span class="nav-text">package and import</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#package-����Դ�l����ڵI���д�ڳ���j�һ�С�"><span class="nav-number">1.2.7.1.</span> <span class="nav-text">package:����Դ�ļ����ڵİ���д�ڳ���ĵ�һ�С�</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#import"><span class="nav-number">1.2.7.2.</span> <span class="nav-text">import:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#���ð�"><span class="nav-number">1.2.7.3.</span> <span class="nav-text">���ð�</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#object��"><span class="nav-number">1.2.8.</span> <span class="nav-text">object��</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#equals-Object-obj"><span class="nav-number">1.2.8.1.</span> <span class="nav-text">equals(Object obj)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#toString-Object-obj"><span class="nav-number">1.2.8.2.</span> <span class="nav-text">toString(Object obj)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#wrapper��"><span class="nav-number">1.2.8.3.</span> <span class="nav-text">wrapper��</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#��ĳ�ʼ�����ڴ����"><span class="nav-number">1.2.9.</span> <span class="nav-text">��ĳ�ʼ�����ڴ����</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#����������������"><span class="nav-number">1.3.</span> <span class="nav-text">����������������</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#��װ��"><span class="nav-number">1.3.1.</span> <span class="nav-text">��װ��</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#�̳���"><span class="nav-number">1.3.2.</span> <span class="nav-text">�̳���</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#��������д"><span class="nav-number">1.3.2.1.</span> <span class="nav-text">��������д</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#super"><span class="nav-number">1.3.2.2.</span> <span class="nav-text">super</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#����ʵ������o����"><span class="nav-number">1.3.2.3.</span> <span class="nav-text">����ʵ������ȫ����</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#��̬��"><span class="nav-number">1.3.3.</span> <span class="nav-text">��̬��</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
@@ -561,7 +627,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
